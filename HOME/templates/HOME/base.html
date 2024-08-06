@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Default Value{% endblock title %}</title>
+    
+    {% comment %} For navbar css{% endcomment %}
+    <link rel="stylesheet" href="{% static 'HOME/styles.css' %}"> 
+
+    {% block style %}    {% endblock %}
+</head>
+
+<body>
+    <div class="topnav">
+        {% block home %} <a href="{% url 'Home:index' %}">Home</a>{% endblock %}
+        {% block balls %}<a href="{% url 'BouncingBalls:index' %}">Balls</a>{% endblock %}
+        {% block spiral %}<a href="{% url 'PrimeSpiral:index' %}">Spiral</a>{% endblock %}
+        {% block temp2 %}<a href="#about">About</a>{% endblock %}
+    </div>
+
+    {% block body %} 
+    {%endblock%}
+</body>
+</html>

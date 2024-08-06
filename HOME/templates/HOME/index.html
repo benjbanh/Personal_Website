@@ -1,0 +1,48 @@
+{% extends "HOME\base.html" %}
+{% load static %}
+
+{% block title %} Home Page {% endblock %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'HOME/styles.css' %}">
+{% endblock %}
+
+
+{% block home %}<a class="active" href="{% url 'Home:index' %}">Home</a> {% endblock %}
+{% block body %}
+    <div>
+        <h1> Welcome to my Personal Website</h1>
+        <p> Here are some demonstrations of my personal projects and some 
+            work I have done over the years. 
+        </p>
+    </div>
+
+    <div>
+        <h2>Bouncing Balls </h2>
+        <p> Here is my first finished project that I started in 2020 during the panemic.
+            I was taking a computer science class at the time and wanted to explore 
+            the subject and tried to make a simple physics engine with balls bouncing like 
+            a windows DVD logo. Admittedly this took a lot longer to implement than I hoped and 
+            I kept pushing updates for the project until I finally got it to a place I liked in 
+            2024. Of course it could be improved, but I feel really proud of accomplishing this 
+            as my first project.
+        </p>
+        <a href="{% url 'BouncingBalls:index' %}">balls</a>
+    </div>
+
+    <div>
+        <h2>Prime Spiral</h2>
+        <p> This is my second project that I've finished which is the prime spiral. 
+            Starting with 1 at the origin, it marks prime numbers green and non-prime
+            numbers black, slowly spiralling out to the edges of the screen where it stops.
+            Also known as the ulam spiral, it shows the suprising patterns of prime numbers
+            emerging from the tapestry and shows visually that prime numbers are not as 
+            random as they seem.
+        </p>
+        <a href="{% url 'PrimeSpiral:index' %}">spiral</a>
+    </div>
+
+    
+    <a href="{% url 'Home:index' %}">Useless</a>
+    
+    
+{% endblock %}
