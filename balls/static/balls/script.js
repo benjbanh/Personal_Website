@@ -10,7 +10,7 @@ const width = (canvas.width = window.innerWidth);
 const height = (canvas.height = window.innerHeight);
 
 const balls = [];
-const initVelocity = 7;
+const initVelocity = 10;
 var id = 0;
 
 /** 

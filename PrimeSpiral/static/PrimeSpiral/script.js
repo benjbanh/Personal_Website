@@ -20,7 +20,7 @@ const primeArr = [];
 
 function setup() {
   ctx.fillStyle = squareColor;
-  ctx.strokeStyle = "white";
+    ctx.fillRect(0,0,width,height);
 
   ctx.lineWidth = 2;
   ctx.fillRect(pos.x, pos.y, squareSize, squareSize);

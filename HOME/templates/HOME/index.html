@@ -2,10 +2,6 @@
 {% load static %}
 
 {% block title %} Home Page {% endblock %}
-{% block style %}
-    <link rel="stylesheet" href="{% static 'HOME/styles.css' %}">
-{% endblock %}
-
 
 {% block home %}<a class="active" href="{% url 'Home:index' %}">Home</a> {% endblock %}
 {% block body %}
@@ -18,7 +14,7 @@
 
     <div>
         <h2>Bouncing Balls </h2>
-        <p> Here is my first finished project that I started in 2020 during the panemic.
+        <p> Here is my first finished project that I started in 2020 during the pandemic.
             I was taking a computer science class at the time and wanted to explore 
             the subject and tried to make a simple physics engine with balls bouncing like 
             a windows DVD logo. Admittedly this took a lot longer to implement than I hoped and 
@@ -40,9 +36,9 @@
         </p>
         <a href="{% url 'PrimeSpiral:index' %}">spiral</a>
     </div>
-
     
     <a href="{% url 'Home:index' %}">Useless</a>
+    <a href="{% url 'SkillTree:index' %}">skilltree</a>
     
     
 {% endblock %}

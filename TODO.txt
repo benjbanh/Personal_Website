@@ -1,0 +1,9 @@
+- Finish css for Home page
+- Add a footer to the page
+- Finish about section 
+- Add Raycasting 
+- Add Skill Optimizer
+
+Final Steps:
+- Find out how to publish using vercel 
+- Find a good domain name
