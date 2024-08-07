@@ -1,8 +1,18 @@
-- Finish css for Home page
+Not Implemented Yet
 - Add a footer to the page
 - Finish about section 
 - Add Raycasting 
-- Add Skill Optimizer
+
+In Progress:
+  Adding css for homepage
+  Adding previews for respective apps on homepage
+  Skill Tree Figma finished but yet to be implemented, need to rewatch CS50 for django forms
+    - https://www.figma.com/design/0vdQhbk3bF5k0zGcXK3OC5/Sword-and-Glory-App?node-id=0-1&t=7xzqgLODRZvyXlkM-0
+    - BTW both text and background are black so "Ctrl + A" 
+    
+Errors:
+    container class fixes issue of balls not filling screen but removes nav bar
+    Spiral preview does not work yet
 
 Final Steps:
 - Find out how to publish using vercel 

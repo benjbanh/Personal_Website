@@ -1,0 +1,11 @@
+{% extends "HOME\prebase.html" %}
+{% load static %}
+
+{%block title%} Balls preview {%endblock%}
+
+{%block body%}
+    <div class="container">
+        <canvas></canvas>
+        <script src="{% static 'balls/preview.js' %}"></script>
+    </div>
+{%endblock%}

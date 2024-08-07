@@ -1,32 +1,11 @@
 html, body {
     overflow: hidden;
-    background-color: red;
-}
-h1 {
-  font-size: 2rem;
-  letter-spacing: -1px;
-  position: absolute;
-  margin: 0;
-  top: -4px;
-  right: 5px;
-
-  color: transparent;
-  text-shadow: 0 0 4px white;
-}
-
-p {
-  position: absolute;
-  margin: 0;
-  top: 35px;
-  right: 5px;
-  font-size: 2rem;
-  color: transparent;
-  text-shadow: 0 0 4px white;
+    background-color: black;
 }
 
 /* becomes red if something is wrong */
 canvas {
-    background-color: white;
+    background-color: red;
     height: 100vh; 
     width: 100vw; 
     display: block;
