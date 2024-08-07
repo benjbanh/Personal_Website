@@ -1,10 +1,11 @@
-const canvas = document.querySelector("canvas");
+let canvas = document.getElementById('balls_canvas');
 const ctx = canvas.getContext("2d");
 
-const width = canvas.width;
-const height = canvas.height;
+const width = (canvas.width = window.innerWidth);
+const height = (canvas.height = window.innerHeight);
 
 const balls = [];
+const numBalls = 5;
 const initVelocity = 2;
 var count = 0;
 var id = 0;   
@@ -189,12 +190,19 @@ class Ball {
 }
 
 function newBall(){
-    let size = random(10,25);
+    let size = random(10,30);
+    let xVel = random(-initVelocity, initVelocity)
+    let yVel = random(-initVelocity, initVelocity)
+
+    if (Math.abs(xVel) > 1)
+        xVel = random(2, initVelocity)
+    if (Math.abs(yVel) > 1)
+        yVel = random(2, initVelocity)
     return new Ball(
       random(0 + size, width - size),
       random(0 + size, height - size),
-      random(-initVelocity, initVelocity),
-      random(-initVelocity, initVelocity),
+      xVel,
+      yVel,
       randomRGB(),
       size,
       id
@@ -208,9 +216,11 @@ function init() {
   ctx.textAlign = "center";
   ctx.strokeStyle = "white";
   ctx.fillRect(0, 0, width, height);
-  balls.push(newBall());
-  balls.push(newBall());
-  console.log(balls)
+  
+  for( let i = 0; i < numBalls; i++) 
+    balls.push(newBall());
+  
+  console.log("Preview Start")
   loop();
 }
 

@@ -5,33 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Default Value{% endblock title %}</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            height: 100%;
-        }
+    <link rel="stylesheet" href="{% static 'HOME/pre_styles.css' %}">
 
-        .container {
-            position: fixed;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            /* background-color: rgb(75, 75, 75); */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .container canvas {
-            display: block;
-            object-fit: contain;
-            max-height: 100%;
-            max-width: 100%;
-        }
-    </style>
     {% block style %}    {% endblock %}
 </head>
 

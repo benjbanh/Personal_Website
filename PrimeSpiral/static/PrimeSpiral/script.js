@@ -1,4 +1,4 @@
-const canvas = document.getElementById("canvas");
+const canvas = document.getElementById('spiral_canvas');
 const ctx = canvas.getContext("2d");
 
 const width = (canvas.width = window.innerWidth);
@@ -40,7 +40,7 @@ function draw() {
   }
   number.limit++;
   if (pos.x < 0) {
-    console.log("Finished");
+    console.log("Finished.");
     clearInterval(interval);
   }
 }
