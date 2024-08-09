@@ -9,15 +9,16 @@
     {% comment %} For navbar css{% endcomment %}
     <link rel="stylesheet" href="{% static 'HOME/styles.css' %}">
     {% block style %}    {% endblock %}
+    {% block script %}    {% endblock %}
 </head>
 
 <body>
-    <div class="topnav">
+    <!-- <div class="topnav">
         {% block home %} <a href="{% url 'Home:index' %}">Home</a>{% endblock %}
         {% block balls %}<a href="{% url 'BouncingBalls:index' %}">Balls</a>{% endblock %}
         {% block spiral %}<a href="{% url 'PrimeSpiral:index' %}">Spiral</a>{% endblock %}
         {% block skilltree %}<a href="{% url 'SkillTree:index' %}">SkillTree</a>{% endblock %}
-    </div>
+    </div> -->
 
     {% block body %} 
     {%endblock%}

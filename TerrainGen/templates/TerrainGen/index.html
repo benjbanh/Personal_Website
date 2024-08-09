@@ -1,0 +1,16 @@
+{% extends "HOME\base.html" %}
+{% load static %}
+
+{% block title %} Three.js 3D Scene {% endblock %}
+    
+{% block style %}<link rel="stylesheet" href="{% static 'TerrainGen/styles.css' %}">{% endblock %}
+
+
+{% block body %}
+    <canvas id="terrain_canvas"></canvas>
+    <script type="module" src="{% static 'TerrainGen/script.js' %}"></script>
+
+{% endblock %}
+
+
+

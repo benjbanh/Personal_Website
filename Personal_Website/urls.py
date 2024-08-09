@@ -20,7 +20,10 @@ from django.urls import include, path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('HOME.urls')),
+    path('test/', include('Example.urls')),                     #Debug
     path('balls/', include('balls.urls')),
     path('spiral/', include('PrimeSpiral.urls')),
     path('skilltree/', include('SkillTree.urls')),
+    path('terraingen/', include('TerrainGen.urls')),
+
 ]

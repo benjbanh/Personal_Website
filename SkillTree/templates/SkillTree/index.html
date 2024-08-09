@@ -1,12 +1,37 @@
 {% extends "HOME\base.html" %}
 {% load static %}
 
-{% block title %} Skill Tree Optimization {% endblock %}
-
-<!-- {% block balls %}<a class="active" href="{% url 'BouncingBalls:index' %}">Balls</a> {% endblock %} -->
-<!-- {% block style %}<link rel="stylesheet" href="{% static 'balls/styles.css' %}">{% endblock %} -->
+{% block title %} Form and Iframe Example {% endblock %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'SkillTree/styles.css' %}">
+{% endblock %}
 
 {% block body %}
-    <h3> Score: {{score}} = {{score}} </h3>
-    <h3> Skills: {{skills}} </h3>
-{% endblock %}
+    <div class="main-content">
+        <div class="intro">
+            <div>
+                <h1>Welcome to the Form Page</h1>
+                <p>This is the introductory section where you can put some information or welcome text.</p>
+            </div>
+            <img src="{% static 'SkillTree/icon.png' %}" alt="Intro Image">
+        </div>
+        <div class="form-section">
+            <h2>Fill out this form</h2>
+            <form method="post">
+                {% csrf_token %}
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name"><br><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email"><br><br>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message"></textarea><br><br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="output-section">
+            <h2>Form Data Output</h2>
+            <textarea id="formOutput" readonly>{{ form_data|default_if_none:"" }}</textarea>
+        </div>
+    </div>
+    <iframe src="https://www.example.com"></iframe>
+{%endblock%}

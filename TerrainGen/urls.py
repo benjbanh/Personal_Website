@@ -1,9 +1,8 @@
 from django.urls import path
 from . import views
 
-app_name = "Home"
+app_name = "TerrainGen"
 
 urlpatterns = [
     path("", views.index, name="index"),
-    path("<str:name>", views.name, name="fuck"),
-]
+] 

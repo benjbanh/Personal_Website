@@ -33,8 +33,10 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'balls',
     'HOME',
+    'Example',
     'PrimeSpiral',
     'SkillTree',
+    'TerrainGen',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

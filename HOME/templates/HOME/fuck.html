@@ -1,39 +1,84 @@
-{% extends "HOME\base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sortable Multiple Containers</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
 
-{% block title %} fuck {% endblock %}
+.container {
+    width: 200px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 4px;
+}
 
-{% block body %}
-    <h1> Hello, {{name}} fucker!</h1>
-    <h1> Hello, {{name}} fucker!</h1>
-    <h1> Hello, {{name}} fucker!</h1>
-    <h1> Hello, {{name}} fucker!</h1>
-    <h1> Hello, {{name}} fucker!</h1>
-    <h1> Hello, {{name}} fucker!</h1>
-    <h1> Hello, {{name}} fucker!</h1>
-    <h1> Hello, {{name}} fucker!</h1>
-    <h1> Hello, {{name}} fucker!</h1>
-    <h1> Hello, {{name}} fucker!</h1>
-    <h1> Hello, {{name}} fucker!</h1>
-    <h1> Hello, {{name}} fucker!</h1>
-    <h1> Hello, {{name}} fucker!</h1>
-    <h1> Hello, {{name}} fucker!</h1>
-    <h1> Hello, {{name}} fucker!</h1>
-    <h1> Hello, {{name}} fucker!</h1>
-    <h1> Hello, {{name}} fucker!</h1>
-    <h1> Hello, {{name}} fucker!</h1>
-    <h1> Hello, {{name}} fucker!</h1>
-    <h1> Hello, {{name}} fucker!</h1>
-    <h1> Hello, {{name}} fucker!</h1>
-    <h1> Hello, {{name}} fucker!</h1>
-    <h1> Hello, {{name}} fucker!</h1>
-    <h1> Hello, {{name}} fucker!</h1>
-    <h1> Hello, {{name}} fucker!</h1>
-    <h1> Hello, {{name}} fucker!</h1>
-    <h1> Hello, {{name}} fucker!</h1>
-    <h1> Hello, {{name}} fucker!</h1>
-    <h1> Hello, {{name}} fucker!</h1>
-    <h1> Hello, {{name}} fucker!</h1>
-    <h1> Hello, {{name}} fucker!</h1>
-    <h1> Hello, {{name}} fucker!</h1>
+.draggable-item {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #007bff;
+    color: white;
+    cursor: move;
+    text-align: center;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
 
-{% endblock %}
+.draggable-item:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container" id="container1">
+        <div class="draggable-item">Item 1</div>
+        <div class="draggable-item">Item 2</div>
+        <div class="draggable-item">Item 3</div>
+    </div>
+
+    <div class="container" id="container2">
+        <div class="draggable-item">Item 4</div>
+        <div class="draggable-item">Item 5</div>
+        <div class="draggable-item">Item 6</div>
+    </div>
+
+    <!-- Include Draggable via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.12/lib/draggable.bundle.legacy.js"></script>
+    <script>
+        // Selecting the containers that will hold the sortable items
+const containers = document.querySelectorAll('.container');
+
+// Initializing Sortable with the selected containers
+const sortable = new Draggable.Sortable(containers, {
+    draggable: '.draggable-item', // Class of items that are draggable and sortable
+    mirror: {
+        // Customize the mirror (ghost item) behavior
+        constrainDimensions: true,
+    },
+});
+
+// Adding event listeners for sortable events
+sortable.on('sortable:start', () => {
+    console.log('Sortable started');
+});
+
+sortable.on('sortable:move', () => {
+    console.log('Sortable moving');
+});
+
+sortable.on('sortable:stop', () => {
+    console.log('Sortable stopped');
+});
+
+    </script>
+</body>
+</html>

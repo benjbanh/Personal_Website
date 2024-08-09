@@ -1,13 +1,17 @@
 Not Implemented Yet
 - Add a footer to the page
-- Finish about section 
-- Add Raycasting 
+- About section 
+- Add Raycasting project
+- Add more UI elements to finished projects using dropdowns or side navigation
+    https://www.w3schools.com/howto/howto_js_sidenav.asp
 
 In Progress:
-  Adding css for homepage
-  Skill Tree Figma finished but yet to be implemented, need to rewatch CS50 for django forms
-    - https://www.figma.com/design/0vdQhbk3bF5k0zGcXK3OC5/Sword-and-Glory-App?node-id=0-1&t=7xzqgLODRZvyXlkM-0
-    - BTW both text and background are black so "Ctrl + A" 
+    Adding css for homepage
+    Skill Tree Figma finished but yet to be implemented, need to rewatch CS50 for django forms
+    - https://www.figma.com/design/0vdQhbk3bF5k0zGcXK3OC5/Sword-and-Glory-App?node-id=0-1&t=7xzqgLODRZvyXlkM-0 
+    Started Perlin Noise Terrain Generation
+        threejs is hard
+
 
 Errors:
 
