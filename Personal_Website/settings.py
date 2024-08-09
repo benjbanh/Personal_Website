@@ -33,7 +33,6 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'balls',
     'HOME',
-    'Example',
     'PrimeSpiral',
     'SkillTree',
     'TerrainGen',
