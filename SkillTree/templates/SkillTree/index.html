@@ -10,8 +10,10 @@
     <div class="main-content">
         <div class="intro">
             <div>
-                <h1>Welcome to the Form Page</h1>
-                <p>This is the introductory section where you can put some information or welcome text.</p>
+                <h1>Sword and Glory Skill Optimization</h1>
+                <p> In order to best find the best skill optimization,
+                    specifying your specific playstyle is necessary. 
+                </p>
             </div>
             <img src="{% static 'SkillTree/icon.png' %}" alt="Intro Image">
         </div>
@@ -19,12 +21,28 @@
             <h2>Fill out this form</h2>
             <form method="post">
                 {% csrf_token %}
-                <label for="name">Name:</label><br>
-                <input type="text" id="name" name="name"><br><br>
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email"><br><br>
-                <label for="message">Message:</label><br>
-                <textarea id="message" name="message"></textarea><br><br>
+                <label for="level">Level:</label><br>
+                <input type="text" id="level" name="level"><br><br>
+                <p>Modifiers</p>
+                <label for="m_to">to</label><br>
+                <input type="range" id="m_to" name="m_to" min="1" max="10" value="1" step="1"><br><br>
+                <label for="m_vs">vs</label><br>
+                <input type="range" id="m_vs" name="m_vs" min="1" max="10" value="1" step="1"><br><br>
+                <label for="m_when">when</label><br>
+                <input type="range" id="m_when" name="m_when" min="1" max="10" value="1" step="1"><br><br>
+                <label for="m_for">for</label><br>
+                <input type="range" id="m_for" name="m_for" min="1" max="10" value="1" step="1"><br><br>
+                <label for="m_while">while</label><br>
+                <input type="range" id="m_while" name="m_while" min="1" max="10" value="1" step="1"><br><br>
+                <label for="m_random">random</label><br>
+                <input type="range" id="m_random" name="m_random" min="1" max="10" value="1" step="1"><br><br>
+
+
+
+
+
+
+
                 <button type="submit">Submit</button>
             </form>
         </div>
@@ -32,6 +50,7 @@
             <h2>Form Data Output</h2>
             <textarea id="formOutput" readonly>{{ form_data|default_if_none:"" }}</textarea>
         </div>
+        <!-- <p> {{ form_data|default_if_none:"" }}</p> -->
     </div>
     <iframe src="https://www.example.com"></iframe>
 {%endblock%}

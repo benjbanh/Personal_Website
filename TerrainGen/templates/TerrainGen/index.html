@@ -1,16 +1,20 @@
 {% extends "HOME\base.html" %}
 {% load static %}
 
-{% block title %} Three.js 3D Scene {% endblock %}
+{% block title %} Three.js with OrbitControls {% endblock %}
     
 {% block style %}<link rel="stylesheet" href="{% static 'TerrainGen/styles.css' %}">{% endblock %}
 
 
 {% block body %}
-    <canvas id="terrain_canvas"></canvas>
-    <script type="module" src="{% static 'TerrainGen/script.js' %}"></script>
+    <div id="container"></div>
+    <!-- Include Three.js -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+    <!-- Include OrbitControls -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+    <script src="{% static 'TerrainGen/script.js' %}"></script>
 
 {% endblock %}
-
 
 

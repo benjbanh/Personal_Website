@@ -50,3 +50,26 @@ iframe {
     height: 100%;
     border: none;
 }
+
+/* Container holding the sortable items */
+#sortable-container {
+    display: flex;
+    gap: 10px; /* Optional: Space between the divs */
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Allow wrapping of items if there are many */
+    background-color: blue;
+    padding-top:10px;
+    padding-left:10px;
+}
+/* Individual sortable items */
+.sortable-item {
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    text-align: center;
+    user-select: none;
+    margin-bottom: 10px; /* Optional: Space between rows */
+}

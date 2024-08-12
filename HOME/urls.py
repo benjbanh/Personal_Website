@@ -5,5 +5,5 @@ app_name = "Home"
 
 urlpatterns = [
     path("", views.index, name="index"),
-    path("<str:name>", views.name, name="fuck"),
+    path("test/", views.draggable_divs_view, name="temp"),
 ]

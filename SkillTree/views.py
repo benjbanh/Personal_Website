@@ -8,18 +8,14 @@ def index(request):
     # result = optimizeSkills(10)               #Commented out until Front End finished 
 
     if request.method == "POST":
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        message = request.POST.get('message')
+        level = request.POST.get('level')
+        if level.isdigit():
+            form_data = optimizeSkills(int(level))
+            
         
-        # Process the form data as needed
-        form_data = f"Name: {name}\nEmail: {email}\nMessage: {message}"
-        
-        return render(request, 'SkillTree/index.html', {
-            'form_data': form_data,
-            })
-    
-
+            return render(request, 'SkillTree/index.html', {
+                'form_data': form_data,
+                })
 
     return render(request, 'SkillTree/index.html', {
 

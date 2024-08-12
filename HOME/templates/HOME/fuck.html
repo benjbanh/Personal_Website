@@ -3,82 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sortable Multiple Containers</title>
+    <title>Draggable Divs with SortableJS</title>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
     <style>
-        body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-    background-color: #f8f9fa;
-}
+        /* Container holding the sortable items */
+        #sortable-container {
+            display: flex;
+            gap: 10px; /* Optional: Space between the divs */
+            justify-content: flex-start;
+            align-items: center;
+            margin-top: 20px;
+            flex-wrap: wrap; /* Allow wrapping of items if there are many */
+            background-color: blue;
+            padding-top:10px;
+            padding-left:10px;
+        }
 
-.container {
-    width: 200px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    background-color: #ffffff;
-    border-radius: 4px;
-}
-
-.draggable-item {
-    padding: 10px;
-    margin: 5px 0;
-    background-color: #007bff;
-    color: white;
-    cursor: move;
-    text-align: center;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-}
-
-.draggable-item:hover {
-    background-color: #0056b3;
-}
-
+        /* Individual sortable items */
+        .sortable-item {
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            text-align: center;
+            user-select: none;
+            margin-bottom: 10px; /* Optional: Space between rows */
+        }
     </style>
 </head>
 <body>
-    <div class="container" id="container1">
-        <div class="draggable-item">Item 1</div>
-        <div class="draggable-item">Item 2</div>
-        <div class="draggable-item">Item 3</div>
-    </div>
+    <h2>Arrange the Divs</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.ordered_divs }}
+        <div id="sortable-container">
+            {% for div in divs %}
+                <div data-id="{{ div.id }}" class="sortable-item">{{ div.name }}</div>
+            {% endfor %}
+        </div>
+        <button type="submit">Submit Order</button>
+    </form>
 
-    <div class="container" id="container2">
-        <div class="draggable-item">Item 4</div>
-        <div class="draggable-item">Item 5</div>
-        <div class="draggable-item">Item 6</div>
-    </div>
+    {% if ordered_divs %}
+        <p>Order of divs: {{ ordered_divs }}</p>
+    {% endif %}
 
-    <!-- Include Draggable via CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.12/lib/draggable.bundle.legacy.js"></script>
     <script>
-        // Selecting the containers that will hold the sortable items
-const containers = document.querySelectorAll('.container');
+        // Initialize the orderedDivs input with the default order
+        document.addEventListener("DOMContentLoaded", function() {
+            var orderedDivs = [];
+            document.querySelectorAll('.sortable-item').forEach(function(div) {
+                orderedDivs.push(div.getAttribute('data-id'));
+            });
+            document.querySelector('input[name="ordered_divs"]').value = orderedDivs.join(',');
+        });
 
-// Initializing Sortable with the selected containers
-const sortable = new Draggable.Sortable(containers, {
-    draggable: '.draggable-item', // Class of items that are draggable and sortable
-    mirror: {
-        // Customize the mirror (ghost item) behavior
-        constrainDimensions: true,
-    },
-});
-
-// Adding event listeners for sortable events
-sortable.on('sortable:start', () => {
-    console.log('Sortable started');
-});
-
-sortable.on('sortable:move', () => {
-    console.log('Sortable moving');
-});
-
-sortable.on('sortable:stop', () => {
-    console.log('Sortable stopped');
-});
-
+        var sortable = new Sortable(document.getElementById('sortable-container'), {
+            animation: 150,
+            onEnd: function (evt) {
+                var orderedDivs = [];
+                document.querySelectorAll('.sortable-item').forEach(function(div) {
+                    orderedDivs.push(div.getAttribute('data-id'));
+                });
+                document.querySelector('input[name="ordered_divs"]').value = orderedDivs.join(',');
+            }
+        });
     </script>
 </body>
 </html>

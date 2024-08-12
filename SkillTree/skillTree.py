@@ -345,7 +345,7 @@ def find_best(graph, score_list,size, k):
 ###############################aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa################################################################
 #                                   DRIVER CODE
 ###############################################################################################
-def optimizeSkills(k):
+def optimizeSkills( k : int ):
     head = TreeNode("base",None,None)
     node_list = []
     if not os.path.isfile(file_path):
@@ -359,13 +359,13 @@ def optimizeSkills(k):
         
         # Parse the HTML content with Beautiful Soup
         soup = BeautifulSoup(response.text, "html.parser")
-        # print("Read from webpage")
+        print("Read from webpage")
     else:
         # Read from file if 
         with open(file_path, 'r', encoding='utf-8') as file:
             # Parse the HTML content of the file using Beautiful Soup
             soup = BeautifulSoup(file, 'html.parser')
-        # print("Read from file")
+        print("Read from file")
     for class_name in class_list:
         # Find all HTML elements with the specified class
         elements_with_class = soup.find_all(class_=class_name)
@@ -397,4 +397,13 @@ def optimizeSkills(k):
         trait_dict[key].sort(key=lambda x: float(x.trait.split(" ", 1)[0].replace("%","")))
     score_li = score_nodes(trait_dict,size)
     max_value, selected_nodes = find_best(translate_to_graph(head), score_li,size, k)
-    return ([score_li[i] for i in selected_nodes], [nlist[i].name for i in selected_nodes])
+
+    result = []
+    print(selected_nodes)
+    #sort nodes by cat_ and level req
+    for i in selected_nodes:
+        result.append((score_li[i], nlist[i].name))
+    return result
+    # return ([score_li[i] for i in selected_nodes], [nlist[i].name for i in selected_nodes])
+
+print(optimizeSkills(5))                   #Debug
