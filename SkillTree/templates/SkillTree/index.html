@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="{% static 'SkillTree/styles.css' %}">
 {% endblock %}
 
+{% block script %}
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+{%endblock%}
+
 {% block body %}
     <div class="main-content">
         <div class="intro">
@@ -21,36 +25,57 @@
             <h2>Fill out this form</h2>
             <form method="post">
                 {% csrf_token %}
-                <label for="level">Level:</label><br>
-                <input type="text" id="level" name="level"><br><br>
+                <label>Level:</label><br>
+                <input type="range" id="level" name="level" min="1" max="10" value="1" step="1">
+                <span id="level_value"></span>
+
+
+                {{ form.ordered_divs }}
+                <div id="sortable-container">
+                    {% for div in divs %}
+                        <div data-id="{{ div.id }}" class="sortable-item">{{ div.name }}</div>
+                    {% endfor %}
+                </div>
+                <!-- <button type="submit">Submit Order</button> -->
+                <script src="{% static 'SkillTree/script.js' %}"></script>
+
+                                
                 <p>Modifiers</p>
-                <label for="m_to">to</label><br>
-                <input type="range" id="m_to" name="m_to" min="1" max="10" value="1" step="1"><br><br>
-                <label for="m_vs">vs</label><br>
-                <input type="range" id="m_vs" name="m_vs" min="1" max="10" value="1" step="1"><br><br>
-                <label for="m_when">when</label><br>
-                <input type="range" id="m_when" name="m_when" min="1" max="10" value="1" step="1"><br><br>
-                <label for="m_for">for</label><br>
-                <input type="range" id="m_for" name="m_for" min="1" max="10" value="1" step="1"><br><br>
-                <label for="m_while">while</label><br>
-                <input type="range" id="m_while" name="m_while" min="1" max="10" value="1" step="1"><br><br>
-                <label for="m_random">random</label><br>
-                <input type="range" id="m_random" name="m_random" min="1" max="10" value="1" step="1"><br><br>
+                <label>to</label><br>
+                <input type="range" id="to_value" name="to" min="1" max="10" value="1" step="1"><br><br>
+                <span id="to_value"></span>
 
+                <label>vs</label><br>
+                <input type="range" id="vs_value" name="vs" min="1" max="10" value="1" step="1"><br><br>
+                <span id="level_value"></span>
 
+                <label>when</label><br>
+                <input type="range" id="when_value" name="when" min="1" max="10" value="1" step="1"><br><br>
+                <span id="level_value"></span>
 
+                <label>for</label><br>
+                <input type="range" id="for_value" name="for" min="1" max="10" value="1" step="1"><br><br>
+                <span id="level_value"></span>
 
+                <label>while</label><br>
+                <input type="range" id="while_value" name="while" min="1" max="10" value="1" step="1"><br><br>
+                <span id="level_value"></span>
 
-
+                <label>random</label><br>
+                <input type="range" id="random_value" name="random" min="1" max="10" value="1" step="1"><br><br>
+                <span id="level_value"></span>
 
                 <button type="submit">Submit</button>
             </form>
         </div>
         <div class="output-section">
             <h2>Form Data Output</h2>
-            <textarea id="formOutput" readonly>{{ form_data|default_if_none:"" }}</textarea>
+            <textarea id="formOutput" readonly>{{ form_data|default_if_none:"None" }} </textarea>
+            {% if ordered_divs %}
+                <p>Order of divs: {{ ordered_divs }}</p>
+            {% endif %}
         </div>
-        <!-- <p> {{ form_data|default_if_none:"" }}</p> -->
+
     </div>
     <iframe src="https://www.example.com"></iframe>
 {%endblock%}

@@ -5,22 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Default Value{% endblock title %}</title>
-    
-    {% comment %} For navbar css{% endcomment %}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet"> -->
+
     <link rel="stylesheet" href="{% static 'HOME/styles.css' %}">
     {% block style %}    {% endblock %}
     {% block script %}    {% endblock %}
 </head>
 
 <body>
-    <!-- <div class="topnav">
+    <div class="navbar" id="navbar">
         {% block home %} <a href="{% url 'Home:index' %}">Home</a>{% endblock %}
+        {% block projects %} <a href="{% url 'Home:projects' %}">Projects</a>{% endblock %}
         {% block balls %}<a href="{% url 'BouncingBalls:index' %}">Balls</a>{% endblock %}
         {% block spiral %}<a href="{% url 'PrimeSpiral:index' %}">Spiral</a>{% endblock %}
         {% block skilltree %}<a href="{% url 'SkillTree:index' %}">SkillTree</a>{% endblock %}
-    </div> -->
+        {% block about %} <a href="{% url 'Home:about' %}">About</a>{% endblock %}
+        {% block test %} <a href="{% url 'Home:test' %}">Testing</a>{% endblock %}
+    </div>
 
     {% block body %} 
     {%endblock%}
+
+    <script src="{% static 'HOME/script.js' %}"></script>
 </body>
 </html>

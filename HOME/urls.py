@@ -5,5 +5,7 @@ app_name = "Home"
 
 urlpatterns = [
     path("", views.index, name="index"),
-    path("test/", views.draggable_divs_view, name="temp"),
+    path("projects/", views.projects, name="projects"),
+    path("test/", views.test, name="test"),
+    path("about/", views.about, name="about"),
 ]

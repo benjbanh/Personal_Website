@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            body {
+                height: 3000px;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                align-self: center;
+                background-image: linear-gradient(
+                    155deg,
+                    rgba(34, 195, 113, 1) 0%,
+                    rgba(84, 192, 184, 1) 18%,
+                    rgba(145, 191, 128, 1) 39%,
+                    rgba(189, 156, 92, 1) 59%,
+                    rgba(218, 127, 69, 1) 79%,
+                    rgba(253, 74, 45, 1) 100%
+                );
+            }
+            .splitboard {
+                position: relative;
+                z-index: 1;
+                overflow: hidden;
+                width: 100vw;
+                height: 100vh;
+                padding-bottom: 10em; 
+                margin-left: calc(((100% - 100vw) / 2) - 8px);
+                -webkit-clip-path: url(#clipSplitBox);
+                clip-path: url(#clipSplitBox);
+            }
+            .splitboard-content {
+                position: relative;
+                width: 100%;
+                height: 100vh;
+            }
+            .splitboard-content iframe {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: inherit;
+                height: inherit;
+                border: none;
+                pointer-events: none;
+                -webkit-filter: blur(10px);
+                -moz-filter: blur(10px);
+                -o-filter: blur(10px);
+                -ms-filter: blur(10px);
+                filter: blur(10px);
+            }
+            /*  */
+            /*  */
+
+            .box {
+                height: 100vh;
+                justify-content: center;
+                border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+                width: 100%;
+                height: 500px;
+                font-size: 3.5rem;
+                padding-top: 125px;
+
+                p {
+                    opacity: 0;
+                    color: rgba(255, 255, 255, 0.8);
+                }
+            }
+
+            .bounce-me {
+                opacity: 1 !important;
+                animation: bounce-in-top 1s both;
+            }
+
+            @keyframes bounce-in-top {
+                0% {
+                    -webkit-transform: translateY(-500px);
+                    transform: translateY(-500px);
+                    -webkit-animation-timing-function: ease-in;
+                    animation-timing-function: ease-in;
+                    opacity: 0;
+                }
+                38% {
+                    -webkit-transform: translateY(0);
+                    transform: translateY(0);
+                    -webkit-animation-timing-function: ease-out;
+                    animation-timing-function: ease-out;
+                    opacity: 1;
+                }
+                55% {
+                    -webkit-transform: translateY(-65px);
+                    transform: translateY(-65px);
+                    -webkit-animation-timing-function: ease-in;
+                    animation-timing-function: ease-in;
+                }
+                72% {
+                    -webkit-transform: translateY(0);
+                    transform: translateY(0);
+                    -webkit-animation-timing-function: ease-out;
+                    animation-timing-function: ease-out;
+                }
+                81% {
+                    -webkit-transform: translateY(-28px);
+                    transform: translateY(-28px);
+                    -webkit-animation-timing-function: ease-in;
+                    animation-timing-function: ease-in;
+                }
+                90% {
+                    -webkit-transform: translateY(0);
+                    transform: translateY(0);
+                    -webkit-animation-timing-function: ease-out;
+                    animation-timing-function: ease-out;
+                }
+                95% {
+                    -webkit-transform: translateY(-8px);
+                    transform: translateY(-8px);
+                    -webkit-animation-timing-function: ease-in;
+                    animation-timing-function: ease-in;
+                }
+                100% {
+                    -webkit-transform: translateY(0);
+                    transform: translateY(0);
+                    -webkit-animation-timing-function: ease-out;
+                    animation-timing-function: ease-out;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box"><p>Hello</p></div>
+        <div class="box"><p>World</p></div>
+        <div class="box"><p>!</p></div>
+
+        <div class="splitboard">
+            <div class="splitboard-content">
+                <iframe
+                    style="background: black"
+                    scrolling="no"
+                    src="{% url 'BouncingBalls:preview' %}"
+                ></iframe>
+            </div>
+
+            <svg class="clip-svg" height="0" width="0">
+                <defs>
+                    <clipPath id="clipSplitBox" clipPathUnits="objectBoundingBox">
+                        <polygon points="0 0.99, 0 0.01, 1 0.01, 1 0.99"></polygon>
+                    </clipPath>
+                </defs>
+            </svg>
+        </div>
+
+        <div class="box"><p>Welcome</p></div>
+        <div class="box"><p>To</p></div>
+        <div class="box">
+            <p>JeminPro<br />.com</p>
+        </div>
+
+        <script>
+    const myDemo = (function () {
+  const init = function () {
+    createObserver();
+  };
+
+  const createObserver = function () {
+    let options = {
+      root: null,
+      rootMargin: "100px",
+      threshold: 0.5
+    };
+
+    let observer = new IntersectionObserver(
+      function (entries, observer) {
+          handleIntersect(entries, observer); 
+        }, 
+      options);
+    
+    let targetElements = document.querySelectorAll(".box");
+
+    targetElements.forEach((targetElement) => {
+      observer.observe(targetElement);
+    });
+  };
+
+  const handleIntersect = function (entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.children[0].classList.add("bounce-me");
+        observer.unobserve(entry.target);
+      }
+    });
+  };
+
+  return {
+    init: init
+  };
+})();
+
+myDemo.init();
+
+</script>
+    </body>
+</html>

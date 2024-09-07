@@ -8,7 +8,9 @@ from collections import defaultdict
 import sys
 
 """
-    NOTES: everything operates correctly, just need to modify scoring algorithm
+    NOTES: scoring algorithm can be improved through a back-propogation algorithm
+        with a discriminator algorithm that checks whether or not the input array
+        is in order from highest to lowest score
 """
 
 # URL of the webpage to scrape
@@ -406,4 +408,4 @@ def optimizeSkills( k : int ):
     return result
     # return ([score_li[i] for i in selected_nodes], [nlist[i].name for i in selected_nodes])
 
-print(optimizeSkills(5))                   #Debug
+# print(optimizeSkills(5))                   #Debug

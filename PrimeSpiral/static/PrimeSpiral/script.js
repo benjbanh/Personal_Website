@@ -83,4 +83,4 @@ function checkPrime() {
 }
 
 setup();
-const interval = setInterval(draw, 1);
+const interval = setInterval(draw, 10);
