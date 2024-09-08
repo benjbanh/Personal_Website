@@ -23,7 +23,7 @@ var id = 0;
  *  ctx.fillStyle = "rgba(0, 0, 0, 1)";    //normal
  *
 */
-const debug = false
+const debug = true
 const mode = "rgba(0, 0, 0, 1)"
     
 
@@ -65,9 +65,11 @@ class Vector {
 
     normalize() {
         if (this.magnitude !== 0) {
-            this.x /= this.magnitude;
-            this.y /= this.magnitude;
-            this.updateMagnitude();
+            let copy = this.copy();
+            copy.x /= copy.magnitude;
+            copy.y /= copy.magnitude;
+            copy.updateMagnitude();
+            return copy;
         }
     }
 
@@ -183,6 +185,14 @@ class Ball {
             let minDist = balls[i].size + this.size;
 
             if (distance < minDist) {
+                if( debug ){
+                    let n = collision.normalize();
+                    let point = new Vector( this.x + this.size * n.x, this.y + this.size * n.y) 
+                    ctx.fillStyle = "rgb(255,0,0)";
+                    ctx.beginPath();
+                    ctx.arc(point.x, point.y, 10, 0, 2 * Math.PI);
+                    ctx.fill();
+                }
                 // console.log(`Hit`);
                 let overlap = minDist - distance;  // Corrected to get positive overlap value
                 let copy = collision.copy();

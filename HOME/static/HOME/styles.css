@@ -47,7 +47,7 @@ iframe {
 /* Navigation Bar*/
 
 .navbar {
-    /* background: linear-gradient(to bottom, rgb(100, 100, 100), rgba(0,0,0,0));  */
+    background: linear-gradient(to bottom, rgba(245, 245, 245, 0.5), rgba(245, 245, 245 , 0)); 
     overflow: hidden;
     text-align: center;
     padding: 10px 0;
@@ -57,12 +57,16 @@ iframe {
     width: 100vw;
     z-index: 1000; /* Ensure it stays on top of other content */
     transition: top 0.7s;
+
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
     
 }
 
 .navbar a {
     display: inline-block;
-    color: black;
+    color: rgb(0,0,0);  /* rgb(0,0,0) or rgb(245, 245, 245)*/
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -75,7 +79,7 @@ iframe {
     display: block;
     width: 0;
     height: 2px;
-    background: black; /* White underline */
+    background: black; 
     transition: width .3s;
     margin: auto;
 }
