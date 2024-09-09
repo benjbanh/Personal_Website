@@ -23,7 +23,7 @@ var id = 0;
  *  ctx.fillStyle = "rgba(0, 0, 0, 1)";    //normal
  *
 */
-const debug = true
+const debug = false;
 const mode = "rgba(0, 0, 0, 1)"
     
 

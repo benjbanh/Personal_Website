@@ -10,11 +10,11 @@ const width = (canvas.width = window.innerWidth);
 const height = (canvas.height = window.innerHeight);
 
 const balls = [];
-const initVelocity = 5;
+const initVelocity = 3;
 var id = 0;
 
-const boundaryRadius = 200;  // Radius of the circular boundary
-const boundaryCenter = {x: width / 2, y: height / 2 };
+const boundaryRadius = width * 0.15;  // Radius of the circular boundary
+const boundaryCenter = {x: width * 0.75, y: height * 0.4 };
 
 /** 
  * debug:
@@ -153,37 +153,35 @@ class Ball {
         }
     }
 
-    // const boundaryRadius = 200;  // Radius of the circular boundary
-    // const boundaryCenter = { x: width / 2, y: height / 2 };
     update() {
-        let col = new Vector(boundaryCenter.x - this.x, boundaryCenter.y - this.y);
-        let distance = col.magnitude;
-        let minDist = boundaryRadius + this.size;
+        // let col = new Vector(boundaryCenter.x - this.x, boundaryCenter.y - this.y);
+        // let distance = col.magnitude;
+        // let minDist = boundaryRadius + this.size;
 
-        if (distance < minDist) {
-            if( debug ){
-                let n = col.normalize();
-                let point = new Vector( this.x + this.size * n.x, this.y + this.size * n.y) 
-                ctx.strokeStyle = "rgb(255,0,0)";
-                ctx.beginPath();
-                ctx.arc(point.x, point.y, 10, 0, 2 * Math.PI);
-                ctx.stroke();
-            }
+        // //boundary collision code
+        // if (distance < minDist) {
+        //     let n = col.normalize();
+        //     if( debug ){
+        //         let point = new Vector( this.x + this.size * n.x, this.y + this.size * n.y) 
+        //         ctx.strokeStyle = "rgb(255,0,0)";
+        //         ctx.beginPath();
+        //         ctx.arc(point.x, point.y, 10, 0, 2 * Math.PI);
+        //         ctx.stroke();
+        //     }
 
-            let overlap = minDist - distance;  // Corrected to get positive overlap value
-            let copy = col.copy();
-            copy.setmag(overlap);
+        //     let overlap = minDist - distance;  // Corrected to get positive overlap value
+        //     let copy = col.copy();
+        //     copy.setmag(overlap);
 
-            this.x -= copy.x;
-            this.y -= copy.y;
+        //     this.x -= copy.x;
+        //     this.y -= copy.y;
 
-            distance = minDist;
-            col.setmag(distance);
-            
+        //     distance = minDist;
+        //     col.setmag(distance);
 
-            
-            
-        }
+        //     let vn = dot(this.velocity, n);
+        //     this.velocity = sub(this.velocity, mult(n, 2 * vn));
+        // }
 
         //wall bounce code
         if (this.x + this.size >= width) {
@@ -247,17 +245,17 @@ class Ball {
             }
 
             // friction
-            this.velocity.mult(0.99);
+            this.velocity = mult(this.velocity, 0.997);
         }
     }
 }
 
-function drawBoundary() {
-    ctx.beginPath();
-    ctx.arc(boundaryCenter.x, boundaryCenter.y, boundaryRadius, 0, 2 * Math.PI);
-    ctx.strokeStyle = "rgba(0, 0, 0, 0.5)"; // Color and transparency
-    ctx.stroke();
-}
+// function drawBoundary() {
+//     ctx.beginPath();
+//     ctx.arc(boundaryCenter.x, boundaryCenter.y, boundaryRadius, 0, 2 * Math.PI);
+//     ctx.strokeStyle = "rgba(0, 0, 0, 0.5)"; // Color and transparency
+//     ctx.stroke();
+// }
 
 //initializes balls in the balls array
 //and calls the main loop at the end
@@ -289,20 +287,20 @@ function init() {
   });
   
 
-    // //add one ball at start
-    // let size = random(25,100)
-    // const newBall = new Ball(
-    //   random(0 + size, width - size),
-    //   random(0 + size, height - size),
-    //   random(-initVelocity, initVelocity),
-    //   random(-initVelocity, initVelocity),
-    //   randomRGB(),
-    //   size,
-    //   id
-    // );
-    // id++;
-    // count++;
-    // balls.push(newBall);
+    //add one ball at start
+    let size = random(25,100)
+    const newBall = new Ball(
+      random(0 + size, width - size),
+      random(0 + size, height - size),
+      random(-initVelocity, initVelocity),
+      random(-initVelocity, initVelocity),
+      randomRGB(),
+      size,
+      id
+    );
+    id++;
+    count++;
+    balls.push(newBall);
     
     loop();
 }
@@ -312,7 +310,7 @@ function loop() {
     ctx.fillStyle = mode;
 
     ctx.fillRect(0, 0, width, height);
-    drawBoundary();
+    // drawBoundary();
 
     for (const ball of balls) {
         ball.draw();
