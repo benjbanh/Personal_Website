@@ -3,10 +3,92 @@
 
 {% block title %} Home Page {% endblock %}
 
-{% block home %}<a class="active" href="{% url 'Home:index' %}">Home</a> {% endblock %}
+{% block projects %}<a class="active" href="{% url 'Home:projects' %}">Projects</a> {% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'HOME/projects.css' %}">
+{% endblock %}
 
 {% block body %}
-    <div class="row" id="balls" style="background-color: rgb(200, 200, 200);">
+        <div class="wrapper">
+            <!-- Parallax iframe #1 -->
+            <div class="top">
+                <img class="top-bg" src="https://as2.ftcdn.net/v2/jpg/00/65/21/89/1000_F_65218950_8gGgy60Q1BFQvz13RLAJOCBtydFwJxFH.jpg">
+                <div class="caption">Projects</div>
+            </div>
+            <h4>
+                Welcome to my projects page. I'm currently a student at Santa Clara University
+                planning to graduate in 2026. Here is a collection of a couple of the projects
+                I've been working on over the years.
+            </h4>
+
+            <!-- Parallax iframe #2 -->
+            <div class="splitboard">
+                <div class="splitboard-content">
+                    <iframe src="{% url 'BouncingBalls:preview' %}" title="balls preview" loading="lazy"></iframe>
+                </div>
+                <div class="caption">Bouncing Balls</div>
+            </div>
+            <p> 
+                Here is my first finished project that I started in 2020 during the pandemic.
+                I was taking a computer science class at the time and wanted to explore 
+                the subject and tried to make a simple physics engine with balls bouncing like 
+                a windows DVD logo. Admittedly this took a lot longer to implement than I hoped and 
+                I kept pushing updates for the project until I finally got it to a place I liked in 
+                2024. Of course it could be improved, but I feel really proud of accomplishing this 
+                as my first project.
+            </p>
+
+            <!-- Parallax iframe #3 -->
+            <div class="splitboard">
+                <div class="splitboard-content">
+                    <iframe src="{% url 'PrimeSpiral:preview' %}" title="spiral preview" loading="lazy"></iframe>
+                </div>
+                <div class="caption">Prime Spiral</div>
+            </div>
+            <p> 
+                This is my second project that I've finished which is the prime spiral. 
+                Starting with 1 at the origin, it marks prime numbers green and non-prime
+                numbers black, slowly spiralling out to the edges of the screen where it stops.
+                Also known as the ulam spiral, it shows the suprising patterns of prime numbers
+                emerging from the tapestry and shows visually that prime numbers are not as 
+                random as they seem.
+            </p>
+
+            <!-- Parallax iframe #4 -->
+            <div class="splitboard">
+                <div class="splitboard-content">
+                    <!-- <iframe src="{% url 'PrimeSpiral:preview' %}" title="spiral preview"></iframe> -->
+                </div>
+                <div class="caption">SkillTree</div>
+            </div>
+
+            <p> 
+                Sword and Glory is a small mobile game that I found myself incredibly attracted to
+                and found suprising depth of storytelling. This game has a typical leveling
+                system where you are given a choice to choose a skill each from 3 different catagories
+                at the start of a run and gain a new skill every level. Despite that, I thought
+                that there must be an optimal way for gaining skills to maximize my progression.
+                So this project came to be. I asked some friends for help with the problem and 
+                it somehow became one of the questions for my school's competitive programming competition.
+                This project still remains as one of my favorites and helped me know so many great people.
+
+                The project was then constructed into a form with a dynamic scoring system that 
+                predicts the best build depending on your playstyle and preferences. 
+            </p>
+
+            <svg class="clip-svg" height="0" width="0">
+                <defs>
+                    <clipPath id="clipSplitBox" clipPathUnits="objectBoundingBox">
+                        <polygon points="0 0.99, 0 0.01, 1 0.01, 1 0.99"></polygon>
+                    </clipPath>
+                </defs>
+            </svg>
+        </div>
+
+        <script src="{% static 'HOME/projects.js' %}"></script>
+
+    <!-- <div class="row" id="balls" style="background-color: rgb(200, 200, 200);">
         <div class="column">
             <h1> Welcome to my Website</h1>
             <p> Here are some demonstrations of my personal projects and some 
@@ -124,7 +206,7 @@
 
     <div class="footer">
         <p>Footer</p>
-    </div>
+    </div> -->
     
     
 {% endblock %}

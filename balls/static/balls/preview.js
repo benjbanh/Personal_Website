@@ -4,14 +4,17 @@ const ctx = canvas.getContext("2d");
 const width = (canvas.width = window.innerWidth);
 const height = (canvas.height = window.innerHeight);
 
-const balls = [];
 const numBalls = 3;
 const initVelocity = 3;
 const minSize = width/20;
 const maxSize = width/10;
-var count = 0;
-var id = 0;   
+const mode = "rgba(245, 245, 245, 1)"
+const friction = false;
 
+const balls = [];
+var count = 0;
+var id = 0;  
+ 
 // function to generate random number
 function random(min, max) {
   const num = Math.floor(Math.random() * (max - min)) + min;
@@ -189,6 +192,11 @@ class Ball {
                 balls[i].velocity.add(deltaVB);
             }
         }
+
+        // friction
+        if(friction){
+            this.velocity = mult(this.velocity, 0.997);
+        }
     }
 }
 
@@ -214,7 +222,6 @@ function init() {
   ctx.font = "10px Comic Sans MS";
   ctx.textAlign = "center";
   ctx.strokeStyle = "white";
-  ctx.fillRect(0, 0, width, height);
   
   for( let i = 0; i < numBalls; i++) 
     balls.push(newBall());
@@ -224,7 +231,7 @@ function init() {
 }
 
 function loop() {
-    ctx.fillStyle = "rgb(0,0,0,1)";
+    ctx.fillStyle = mode
 
     ctx.fillRect(0, 0, width, height);
 

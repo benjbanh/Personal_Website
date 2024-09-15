@@ -3,7 +3,7 @@
 
 {% block title %} Home {% endblock %}
 
-{% block home %}<a class="active" href="{% url 'Home:index' %}">Home</a> {% endblock %}
+{% block home %}<a class="active" href="{% url 'Home:index' %}"> Home </a> {% endblock %}
 {% block style %}
     <link rel="stylesheet" href="{% static 'HOME/home.css' %}">
 {% endblock %}
@@ -11,8 +11,10 @@
 {% block body %}
     <main>
         <!-- Home Section -->
-        <canvas class="home-canvas"></canvas>
-        <script src="{% static 'balls/home.js' %}"></script>
+        <div>
+            <canvas class="home-canvas"></canvas>
+            <script src="{% static 'balls/home.js' %}"></script>
+        </div>
 
         <p class="secret-text"> :0 </p>
         <section class="home-section">
@@ -21,12 +23,16 @@
         </section>
 
         <div class="content">
-            <a href="#">My Experience</a>
+            <a href="{% url 'Home:projects' %}">My Experience</a>
         </div>
 
         <!-- Image Section -->
         <div class="image-container">
-            <img src="{% static 'HOME/images/me.jpg' %}" alt="Your Image">
+            <img src="{% static 'HOME/images/me.jpg' %}" alt="ME.jpg">
+        </div>
+
+        <div class="mouse_container">
+            <img src="{% static 'HOME/images/mouse_click.png' %}" alt="click here">
         </div>
 
         <!-- Icon Bar Section -->

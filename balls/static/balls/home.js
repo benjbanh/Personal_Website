@@ -1,5 +1,3 @@
-// https://editor.p5js.org/codingtrain/sketches/z8n19RFz9
-
 const para = document.querySelector("p");
 let count = 0;
 
@@ -13,8 +11,8 @@ const balls = [];
 const initVelocity = 3;
 var id = 0;
 
-const boundaryRadius = width * 0.15;  // Radius of the circular boundary
-const boundaryCenter = {x: width * 0.75, y: height * 0.4 };
+// const boundaryRadius = width * 0.15;  // Radius of the circular boundary
+// const boundaryCenter = {x: width * 0.75, y: height * 0.4 };
 
 /** 
  * debug:

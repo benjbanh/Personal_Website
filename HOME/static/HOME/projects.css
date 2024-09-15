@@ -1,0 +1,91 @@
+/* 
+Splitboard has internal margin casuing white space at top of screen
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", serif;
+    scroll-behavior: smooth;
+}
+
+.wrapper {
+    width: 80vw;
+    margin: 0 auto;
+    margin-top: 0;
+    /* border: 5px solid black; */
+    /* background-color: black; */
+}
+.wrapper h4{
+    font-size: 3em;
+    color: black;
+    line-height: 1.5;
+    text-align: center;
+
+    padding: 5em 5em;
+}
+.wrapper p{
+    font-size: 1.5em;
+    color: black;
+    line-height: 2;
+
+    padding: 10em 10em;
+}
+
+#outBtn {
+    margin: 10px auto;
+    display: block;
+}
+.splitboard {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    width: 100vw;
+    margin-left: calc(((100% - 100vw) / 2) - 8px);
+    -webkit-clip-path: url(#clipSplitBox);
+    clip-path: url(#clipSplitBox);
+    /* margin-bottom: 20px; */
+}
+.splitboard-content {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+.splitboard-content iframe {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    border: none;
+    pointer-events: none;
+}
+.splitboard-content.active iframe,
+.splitboard-content:hover iframe {
+    pointer-events: all;
+}
+
+.top {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    width: 100vw;
+    margin-left: calc(((100% - 100vw) / 2) - 8px);
+}
+.top-bg {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3em;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 10px;
+}

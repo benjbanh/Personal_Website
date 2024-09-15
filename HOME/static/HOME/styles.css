@@ -19,9 +19,6 @@ html, body {
   scroll-behavior: smooth;
 }
 
-a {
-    color: #007cc9;
-}
 /* Home/index.html webpage */
 .row {
     display: -webkit-flex;
@@ -36,37 +33,29 @@ a {
   border:5px red;
 }
 
-iframe {
-    padding: 0;
-    margin: 0;
-    border:0;
-    width: 50vh;
-    height: 30vh;
-}
-
 /* Navigation Bar*/
 
 .navbar {
-    background: linear-gradient(to bottom, rgba(245, 245, 245, 0.5), rgba(245, 245, 245 , 0)); 
+    background: linear-gradient(to bottom, rgba(245, 245, 245, 0.75), rgba(245, 245, 245 , 0)); 
     overflow: hidden;
     text-align: center;
     padding: 10px 0;
-    position: fixed;        /* makes it left justified*/
+    position: fixed;
     display: block;
-    top: 0; /* Sticks the navbar to the top */
+    top: 0; 
     width: 100vw;
-    z-index: 1000; /* Ensure it stays on top of other content */
+    z-index: 10; 
     transition: top 0.7s;
 
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
+    -webkit-user-select: none; 
+    -ms-user-select: none;
+    user-select: none; 
     
 }
 
 .navbar a {
     display: inline-block;
-    color: rgb(0,0,0);  /* rgb(0,0,0) or rgb(245, 245, 245)*/
+    color: rgb(150, 150, 150);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -74,12 +63,21 @@ iframe {
     position: relative;
 }
 
+.navbar a:hover {
+    transition: color 1.5s;
+    color: rgb(0, 0, 0);
+}
+
+.navbar .active {
+    color: rgb(0, 0, 0);
+}
+
 .navbar a::after {
     content: '';
     display: block;
     width: 0;
     height: 2px;
-    background: black; 
+    background: rgb(44, 29, 29); 
     transition: width .3s;
     margin: auto;
 }
@@ -87,6 +85,7 @@ iframe {
 .navbar a:hover::after {
     width: 100%; /* On hover, the underline will expand */
 }
+
 /* Footer */
 .footer {
    left: 0;

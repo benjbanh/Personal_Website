@@ -5,7 +5,15 @@
 
 {% block spiral %}<a class="active" href="{% url 'PrimeSpiral:index' %}">Spiral</a> {% endblock %}
 
+{% block style %}
+    <link rel="stylesheet" href="{% static 'PrimeSpiral/styles.css' %}">
+{% endblock %}
+
 {% block body %}
-    <canvas id="spiral_canvas"></canvas>
+    <div class="canvas-container">
+        <canvas id="spiral_canvas"></canvas>
+        <div class="spiral_info">Ulam Spiral</div>
+    </div>
+
     <script src="{% static 'PrimeSpiral/script.js' %}"></script>
 {% endblock %}
