@@ -1,7 +1,7 @@
 {% extends "HOME/base.html" %}
 {% load static %}
 
-{% block title %} Home {% endblock %}
+{% block title %} Benjamin Banh {% endblock %}
 
 {% block home %}<a class="active" href="{% url 'Home:index' %}"> Home </a> {% endblock %}
 {% block style %}
@@ -38,16 +38,16 @@
         <!-- Icon Bar Section -->
         <section class="icon-bar">
             <a href="#email" class="icon-container" target="_blank" rel="noopener noreferrer">
-                <img src="{% static 'HOME/images/email-icon.svg' %}" alt="email icon">
+                <img src="{% static 'HOME/images/email-icon.svg' %}" title="Email Me" alt="email icon">
             </a>
             <a href="https://www.linkedin.com/in/benjamin-banh/" class="icon-container" target="_blank" rel="noopener noreferrer">
-                <img src="{% static 'HOME/images/linkedin-icon.svg' %}" alt="email icon">
+                <img src="{% static 'HOME/images/linkedin-icon.svg' %}" title="LinkedIn" alt="LinkedIn">
             </a>
-            <a href="https://github.com" class="icon-container" target="_blank" rel="noopener noreferrer">
-                <img src="{% static 'HOME/images/github-icon.svg' %}" alt="email icon">
+            <a href="https://github.com/benjbanh" class="icon-container" target="_blank" rel="noopener noreferrer">
+                <img src="{% static 'HOME/images/github-icon.svg' %}" title="GitHub" alt="Github">
             </a>
             <a href="#download-resume" class="icon-container" target="_blank" rel="noopener noreferrer">
-                <img src="{% static 'HOME/images/resume-icon.svg' %}" alt="email icon">
+                <img src="{% static 'HOME/images/resume-icon.svg' %}" title="My Resume" alt="My Resume">
             </a>
         </section>
     </main>
