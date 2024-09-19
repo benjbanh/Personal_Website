@@ -1,0 +1,57 @@
+{% extends "HOME/base.html" %}
+{% load static %}
+
+{% block title %} Benjamin Banh {% endblock %}
+
+{% block experience %}<a class="active" href="{% url 'Home:experience' %}"> Experience </a> {% endblock %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'HOME/experience.css' %}">
+{% endblock %}
+
+{% block body %}
+<!-- <iframe src="{% url 'BouncingBalls:preview' %}"> -->
+    <div class="intro">
+        <h1> My Experience</h1>
+        <p> Benefits:
+This setup guarantees exactly 4 boxes per row on larger screens.
+It maintains responsiveness by adjusting the number of boxes per row based on screen size.
+The grid adapts dynamically without breaking or misaligning as new boxes are added.
+Let me know if this works for your layout or if you need further customization!</p>
+    </div>
+
+    <div class="container">
+        <div class="box" data-iframe="{% url 'BouncingBalls:preview' %}">
+            <h2>Video 1</h2>
+            <img src="https://via.placeholder.com/150" alt="Image 1">
+            <p>This is a description of the first video. <a href="https://example.com" target="_blank">More info</a></p>
+        </div>
+        <div class="box" data-iframe="https://www.youtube.com/embed/dQw4w9WgXcQ">
+            <h2>Video 2</h2>
+            <img src="https://via.placeholder.com/150" alt="Image 2">
+            <p>This is a description of the second video. <a href="https://example.com" target="_blank">More info</a></p>
+        </div>
+        <div class="box" data-iframe="https://www.youtube.com/embed/dQw4w9WgXcQ">
+            <h2>Video 3</h2>
+            <img src="https://via.placeholder.com/150" alt="Image 3">
+            <p>This is a description of the third video. <a href="https://example.com" target="_blank">More info</a></p>
+        </div>
+        <div class="box" data-iframe="https://www.youtube.com/embed/dQw4w9WgXcQ">
+            <h2>Video 4</h2>
+            <img src="https://via.placeholder.com/150" alt="Image 4">
+            <p>This is a description of the fourth video. <a href="https://example.com" target="_blank">More info</a></p>
+        </div>
+        <div class="box" data-iframe="https://www.youtube.com/embed/dQw4w9WgXcQ">
+            <h2>Video 5</h2>
+            <img src="https://via.placeholder.com/150" alt="Image 5">
+            <p>This is a description of the fifth video. <a href="https://example.com" target="_blank">More info</a></p>
+        </div>
+        <div class="box" data-iframe="https://www.youtube.com/embed/dQw4w9WgXcQ">
+            <h2>Video 6</h2>
+            <img src="https://via.placeholder.com/150" alt="Image 6">
+            <p>This is a description of the sixth video. <a href="https://example.com" target="_blank">More info</a></p>
+        </div>
+    </div>
+
+<script src="{% static 'HOME/experience.js' %}"></script>
+
+{% endblock %}

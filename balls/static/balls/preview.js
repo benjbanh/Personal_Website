@@ -24,7 +24,7 @@ function random(min, max) {
 
 function randomRGB() {
 //   return `rgb(${random(100, 255)},${random(50, 255)},${random(50, 255)})`;
-    return `rgb(255,255,255)`;
+    return "rgb(255, 100, 0)";
 }
 
 class Vector {

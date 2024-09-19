@@ -16,16 +16,24 @@
                 <img class="top-bg" src="https://as2.ftcdn.net/v2/jpg/00/65/21/89/1000_F_65218950_8gGgy60Q1BFQvz13RLAJOCBtydFwJxFH.jpg">
                 <div class="caption">Projects</div>
             </div>
-            <h4>
-                Welcome to my projects page. I'm currently a student at Santa Clara University
-                planning to graduate in 2026. Here is a collection of a couple of the projects
-                I've been working on over the years.
-            </h4>
+            <div class="about-section">
+                <p class="about">
+                    Hi! Thanks for taking the time and exploring my website. My name is Ben and I'm
+                    currently a junior studying Electrical and Computer Engineering in Santa Clara 
+                    University and graduating in June of 2026. I'm currently on the board for the
+                    IEEE Student Chapter of District 6. I also like doing personal projects such as
+                    some featured in this section as well as participating in hackathons and coding 
+                    competitions. I'm also learning the basics of game development with a goal of 
+                    producing and publishing a game of my own one day. Other hobbies I have outside 
+                    of tech are learning new things by reading books such as playing the harmonica, 
+                    reading tarot cards, and learning how to (eventually) do a backflip.
+                </p>
+            </div>
 
             <!-- Parallax iframe #2 -->
             <div class="splitboard">
                 <div class="splitboard-content">
-                    <iframe src="{% url 'BouncingBalls:preview' %}" title="balls preview" loading="lazy"></iframe>
+                    <iframe src="{% url 'BouncingBalls:preview' %}" title="balls preview"></iframe>
                 </div>
                 <div class="caption">Bouncing Balls</div>
             </div>
@@ -86,127 +94,6 @@
             </svg>
         </div>
 
-        <script src="{% static 'HOME/projects.js' %}"></script>
-
-    <!-- <div class="row" id="balls" style="background-color: rgb(200, 200, 200);">
-        <div class="column">
-            <h1> Welcome to my Website</h1>
-            <p> Here are some demonstrations of my personal projects and some 
-                work I have done over the years. 
-            </p>
-            <a href="{% url 'Home:test' %}">Testing</a>
-        </div>
-    </div>
-
-    <div class="row" id="balls" style="background-color: rgb(150, 150, 150);">
-        <div class="column">
-            <h2>Bouncing Balls </h2>
-            <p> Here is my first finished project that I started in 2020 during the pandemic.
-                I was taking a computer science class at the time and wanted to explore 
-                the subject and tried to make a simple physics engine with balls bouncing like 
-                a windows DVD logo. Admittedly this took a lot longer to implement than I hoped and 
-                I kept pushing updates for the project until I finally got it to a place I liked in 
-                2024. Of course it could be improved, but I feel really proud of accomplishing this 
-                as my first project.
-            </p>
-            <a href="{% url 'BouncingBalls:index' %}">Link to Full Sized App</a>
-        </div>
-        <div class="column">
-            <iframe src="{% url 'BouncingBalls:preview' %}" title="balls preview" loading="lazy"></iframe>
-        </div>
-    </div>
-
-    <div class="row" id="spiral" style="background-color: rgb(100, 100, 100);">
-        <div class="column">
-            <h2>Prime Spiral</h2>
-            <p> This is my second project that I've finished which is the prime spiral. 
-                Starting with 1 at the origin, it marks prime numbers green and non-prime
-                numbers black, slowly spiralling out to the edges of the screen where it stops.
-                Also known as the ulam spiral, it shows the suprising patterns of prime numbers
-                emerging from the tapestry and shows visually that prime numbers are not as 
-                random as they seem.
-            </p>
-            <a href="{% url 'PrimeSpiral:index' %}">Link to Full Sized App</a>
-        </div>
-        <div class="column">
-            <iframe src="{% url 'PrimeSpiral:preview' %}" title="spiral preview" loading="lazy"></iframe>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="column">
-            <h2>TerrainGen</h2>
-            <p> ....................</p>
-            <a href="{% url 'TerrainGen:index' %}">Link to TerrainGen</a>
-        </div>
-        
-    </div>
-    <div class="row">
-        <div class="column">
-            <h2>SkillTree</h2>
-            <p> Sword and Glory is a small mobile game that I found myself incredibly attracted to
-                and found suprising depth of storytelling. This game has a typical leveling
-                system where you are given a choice to choose a skill each from 3 different catagories
-                at the start of a run and gain a new skill every level. Despite that, I thought
-                that there must be an optimal way for gaining skills to maximize my progression.
-                So this project came to be. I asked some friends for help with the problem and 
-                it somehow became one of the questions for my school's competitive programming competition.
-                This project still remains as one of my favorites and helped me know so many great people.
-            </p>
-            <a href="{% url 'SkillTree:index' %}">Link to SkillTree</a>
-        </div>
-    </div>
-    <div class="row">
-        <div class="column">
-            <h2>H3</h2>
-            <h3> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim 
-                ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
-                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
-                in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
-                sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
-                mollit anim id est laborum.
-            </h3>
-        </div>
-    </div>
-    <div class="row">
-        <div class="column">
-            <h2>H4</h2>
-            <h4> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim 
-                ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
-                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
-                in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
-                sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
-                mollit anim id est laborum.
-            </h4>
-        </div>
-    </div>
-    <div class="row">
-        <div class="column">
-            <h2>p</h2>
-            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim 
-                ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
-                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
-                in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
-                sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
-                mollit anim id est laborum.
-            </p>
-        </div>
-        <div class="column">
-            <iframe src="{% url 'PrimeSpiral:preview' %}" title="spiral preview" loading="lazy"></iframe>
-        </div>
-    </div>
-
-    <p>------------------------------------------------------------------------------------</p>
-    
-    <a href="#balls">Back to Balls</a>
-    <a href="#spiral">Back to Spiral</a>
-
-    <div class="footer">
-        <p>Footer</p>
-    </div> -->
-    
+        <script src="{% static 'HOME/projects.js' %}"></script>    
     
 {% endblock %}

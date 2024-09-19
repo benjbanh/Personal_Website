@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.intro {
+    background-color: lightblue;
+    margin: 5em 0; /*margin: vertical horizontal*/
+
+}
+
+.intro h1{
+    font-size: 3em;
+    color: black;
+}
+
+.intro p{
+
+    font-size: 1.5em;
+    color: black;
+    line-height: 1.5;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(200px, 1fr)); /* Ensure 4 boxes per row */
+    gap: 20px; /* Space between boxes */
+    
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.box img, .box iframe {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.box h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.box p {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+}
+
+.box a {
+    color: #007BFF;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.box a:hover {
+    color: #f6ff00;
+}
+
+.box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Ensure full-width on smaller screens */
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: repeat(2, minmax(200px, 1fr)); /* 2 boxes per row for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; /* Make each box take full width on small screens */
+    }
+}
