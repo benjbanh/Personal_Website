@@ -35,7 +35,6 @@ INSTALLED_APPS = [
     'balls',
     'HOME',
     'PrimeSpiral',
-    'SkillTree',
     'TerrainGen',
     'django.contrib.admin',
     'django.contrib.auth',
