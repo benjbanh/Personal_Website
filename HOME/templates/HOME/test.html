@@ -1,46 +1,29 @@
-{% extends "HOME/base.html" %}
-{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Popup Example</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-{% block title %} Test {% endblock %}
+<div class="clickable-div">Click me to open popup</div>
 
-{% block style %}
-    <link rel="stylesheet" href="{% static 'HOME/test.css' %}">
-{% endblock %}
-
-{% block body %}
-    <div class="container">
-        <!-- Left side with images and rough descriptions -->
-        <div class="left-panel">
-            <div class="content-section" id="section1">
-                <img src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" alt="Image 1">
-                <h2>Rough Description 1</h2>
-            </div>
-            <div class="content-section" id="section2">
-                <img src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" alt="Image 2">
-                <h2>Rough Description 2</h2>
-            </div>
-            <div class="content-section" id="section3">
-                <img src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" alt="Image 3">
-                <h2>Rough Description 3</h2>
-            </div>
-        </div>
-
-        <!-- Right side with detailed descriptions -->
-        <div class="right-panel">
-            <div class="detailed-section" data-section="section1">
-                <h3>Detailed Description 1</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-            <div class="detailed-section" data-section="section2">
-                <h3>Detailed Description 2</h3>
-                <p>Vivamus luctus eros aliquet convallis ultricies.</p>
-            </div>
-            <div class="detailed-section" data-section="section3">
-                <h3>Detailed Description 3</h3>
-                <p>Pellentesque habitant morbi tristique senectus et netus.</p>
-            </div>
-        </div>
-
-        <script src="{% static 'HOME/test.js' %}"></script>
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span class="close">&times;</span>
+    <div class="popup-body">
+      <img src="your-image.jpg" alt="Popup Image" class="popup-image">
+      <div class="popup-text">
+        <h2>Detailed Explanation</h2>
+        <p>This is a detailed explanation that appears on the right side of the popup. You can add any text or content here to explain the image shown on the left.</p>
+      </div>
     </div>
-{% endblock %}
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -6,25 +6,30 @@
 {% block home %}<a class="active" href="{% url 'Home:index' %}"> Home </a> {% endblock %}
 {% block style %}
     <link rel="stylesheet" href="{% static 'HOME/home.css' %}">
+    <link rel="stylesheet" href="{% static 'HOME/experience.css' %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
 {% endblock %}
 
 {% block body %}
-    <main>
+    <div class="header" id="header">
         <!-- Home Section -->
-        <div>
-            <canvas class="home-canvas"></canvas>
-            <script src="{% static 'balls/home.js' %}"></script>
-        </div>
+        <canvas class="home-canvas"></canvas>
+        <script src="{% static 'balls/home.js' %}"></script>
+        
 
         <p class="secret-text"> :0 </p>
         <section class="home-section">
             <div class="heading-xxlarge">Benjamin Banh</div>
-            <div class="heading-large">a lover of coding</div>
+            <div class="heading-large">Aspiring Engineer</div>
         </section>
 
         <div class="content">
-            <a href="{% url 'Home:projects' %}">My Experience</a>
+            <a href="#experience">My Experience</a>
         </div>
+
+        <a class="resume-button" href="" target="_blank" rel="noopener noreferrer" >My Resume</a> 
+
 
         <!-- Image Section -->
         <div class="image-container">
@@ -37,18 +42,254 @@
 
         <!-- Icon Bar Section -->
         <section class="icon-bar">
-            <a href="#email" class="icon-container" target="_blank" rel="noopener noreferrer">
-                <img src="{% static 'HOME/images/email-icon.svg' %}" title="Email Me" alt="email icon">
-            </a>
             <a href="https://www.linkedin.com/in/benjamin-banh/" class="icon-container" target="_blank" rel="noopener noreferrer">
                 <img src="{% static 'HOME/images/linkedin-icon.svg' %}" title="LinkedIn" alt="LinkedIn">
             </a>
             <a href="https://github.com/benjbanh" class="icon-container" target="_blank" rel="noopener noreferrer">
                 <img src="{% static 'HOME/images/github-icon.svg' %}" title="GitHub" alt="Github">
             </a>
-            <a href="#download-resume" class="icon-container" target="_blank" rel="noopener noreferrer">
+            <!-- <a href="#download-resume" class="icon-container" target="_blank" rel="noopener noreferrer">
                 <img src="{% static 'HOME/images/resume-icon.svg' %}" title="My Resume" alt="My Resume">
-            </a>
+            </a> -->
         </section>
-    </main>
+    </div>
+
+    <div class="intro" id="about">
+        <div class="left-section">
+            <h1> About Me. </h1>
+        </div>
+        
+        <div class="right-section">
+            <div class="right-block">
+                <h3>Education</h3>
+                <p> I'm a currently an undergraduate student at Santa Clara University
+                    pursuing a Bachelors in Electrical and Computer Engineering and 
+                    expecting to graduate in June of 2026. 
+                </p>
+            </div>
+
+            <div class="right-block">
+                <h3>My Hobbies</h3>
+                <p> 
+                    I like to play the piano and harmonica in my free time. I also like 
+                    to learn game development and am in the process of designing a video
+                    game by learning player psychology and adjacent skills such as art and 
+                    composing.
+                </p>
+            </div>
+
+            <div class="right-block">
+                <h3>Skills</h3>
+                <div class="skills-list">
+                    <div class="skill-item">
+                        <i class="fa-brands fa-python"></i>
+                        <span class="skill-name">Python</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fa-brands fa-html5"></i>  
+                        <span class="skill-name">HTML</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fa-brands fa-css3-alt"></i>
+                        <span class="skill-name">CSS</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fa-brands fa-js"></i>
+                        <span class="skill-name">JS</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fa-brands fa-java"></i>
+                        <span class="skill-name">Java</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="{% static 'HOME/images/c.png' %}">
+                        <span class="skill-name">C</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="{% static 'HOME/images/cpp-icon.png' %}">
+                        <span class="skill-name">C++</span>
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="experience" id="experience">
+        <div class="container-heading" >
+            <h1> My Experience </h1>
+        </div>
+
+        <div class="container">
+            <div
+                class="live-box"
+                data-title="Bouncing Balls"
+                data-description="Here is my first finished project that I started in 2020 during the pandemic.
+                    I was taking a computer science class at the time and wanted to explore 
+                    the subject and tried to make a simple physics engine with balls bouncing like 
+                    a windows DVD logo. Admittedly this took a lot longer to implement than I hoped and 
+                    I kept pushing updates for the project until I finally got it to a place I liked in 
+                    2024. Of course it could be improved, but I feel really proud of accomplishing this 
+                    as my first project."
+                data-url="{% url 'BouncingBalls:preview' %}"
+            >
+                <img src="{% static 'HOME/images/balls_preview.png' %}" alt="balls_preview">
+                <h2>Bouncing Balls</h2>
+                <p>A simple physics simulation using spheres<br>
+                    <a href="{% url 'BouncingBalls:index' %}" target="_blank">See the Full Project</a>
+                </p>
+            </div>
+            <div
+                class="live-box"
+                data-title="Prime Spiral"
+                data-description="This is my second project that I've finished which is the prime spiral. 
+                    Starting with 1 at the origin, it marks prime numbers green and non-prime
+                    numbers black, slowly spiralling out to the edges of the screen where it stops.
+                    Also known as the ulam spiral, it shows the suprising patterns of prime numbers
+                    emerging from the tapestry and shows visually that prime numbers are not as 
+                    random as they seem."
+                data-url="{% url 'PrimeSpiral:preview' %}"
+            >
+                <img src="{% static 'HOME/images/spiral_preview.png' %}" alt="spiral_preview" />
+                <h2>Prime Spiral</h2>
+                <p>
+                    A replication of the Ulam Spiral on a smaller scale<br>
+                    <a href="{% url 'PrimeSpiral:index' %}" target="_blank">See the Full Project</a>
+                </p>
+            </div>
+            <div
+                class="live-box"
+                data-title="Skill Tree Optimizer"
+                data-description="Sword and Glory is a small mobile game that I found myself incredibly attracted to
+                    and found suprising depth of storytelling. This game has a typical leveling
+                    system where you are given a choice to choose a skill each from 3 different catagories
+                    at the start of a run and gain a new skill every level. Despite that, I thought
+                    that there must be an optimal way for gaining skills to maximize my progression.
+                    So this project came to be. I asked some friends for help with the problem and 
+                    it somehow became one of the questions for my school's competitive programming competition.
+                    This project still remains as one of my favorites and helped me know so many great people.
+
+                    The project was then constructed into a form with a dynamic scoring system that 
+                    predicts the best build depending on your playstyle and preferences. "
+                data-url="{% static 'HOME/images/spiral_preview.png' %}"
+            >
+                <img src="https://via.placeholder.com/150" alt="Video Thumbnail" />
+                <h2>Skill Tree Optimizer</h2>
+                <p>
+                    An algorithm that finds the best value solution given 
+                    complete information of options <br>
+                    <a href="{% url 'SkillTree:index' %}" target="_blank">See the Full Project</a>
+
+                </p>
+            </div>
+            <div
+                class="live-box"
+                data-title="Charity Evaluator"
+                data-description="This was a hackathon project where our team analyzed how how 
+                    efficient each nonprofit charity is in America through an 
+                    analysis of the IRS Form 990s by balancing their program 
+                    expenses over total expenses. The goal of our project was 
+                    to determine which charities were best for people to donate 
+                    to do the most good with the same amount of money."
+                data-url="https://www.youtube.com/embed/video-id-4"
+            >
+                <img src="https://via.placeholder.com/150" alt="Video Thumbnail" />
+                <h2>Charity Evaluator</h2>
+                <p>
+                    Evaluates the most efficient charity through IRS Forms
+                    <a href="https://github.com/cyanide1209/hack" target="_blank">Link to Github</a>
+                </p>
+            </div>
+            
+            <div
+                class="live-box"
+                data-title="Social Interaction Simulator Game"
+                data-description="This is the description for Video 4."
+                data-url="https://www.youtube.com/embed/video-id-4"
+            >
+                <img src="https://via.placeholder.com/150" alt="Video Thumbnail" />
+                <h2>Social Interaction Simulator Game</h2>
+                <p>
+                    Description<br>
+                    <a href="https://github.com/suncycles/h4hsocialsim" target="_blank">Link to Github</a>
+                </p>
+            </div>
+            <div
+                class="live-box"
+                data-title="Video 4 Title"
+                data-description="This is the description for Video 4."
+                data-url="https://www.youtube.com/embed/video-id-4"
+            >
+                <img src="https://via.placeholder.com/150" alt="Video Thumbnail" />
+                <h2>Universe3D</h2>
+                <p>Click to view a video demonstration and detailed explanation</p>
+            </div>
+            <div
+                class="live-box"
+                data-title="Video 4 Title"
+                data-description="This is the description for Video 4."
+                data-url="https://www.youtube.com/embed/video-id-4"
+            >
+                <img src="https://via.placeholder.com/150" alt="Video Thumbnail" />
+                <h2>IEEE Board Member</h2>
+                <p>Click to view a video demonstration and detailed explanation</p>
+            </div>
+            <div
+                class="live-box"
+                data-title="Video 4 Title"
+                data-description="This is the description for Video 4."
+                data-url="https://www.youtube.com/embed/video-id-4"
+            >
+                <img src="https://via.placeholder.com/150" alt="Video Thumbnail" />
+                <h2>Media Services</h2>
+                <p>Click to view a video demonstration and detailed explanation</p>
+            </div>
+            <!-- <div
+                class="live-box"
+                data-title="Video 4 Title"
+                data-description="This is the description for Video 4."
+                data-url="https://www.youtube.com/embed/video-id-4"
+            >
+                <img src="https://via.placeholder.com/150" alt="Video Thumbnail" />
+                <h2>Watch Video 4</h2>
+                <p>Click to view a video demonstration and detailed explanation</p>
+            </div> -->
+        </div>
+
+        <!-- Popup with distinct iframe and text sections -->
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <span class="close">&times;</span>
+
+                <!-- Split popup into left (iframe) and right (text) -->
+                <div class="popup-left">
+                    <div class="popup-iframe" id="iframe-container">
+                        <!-- The iframe will be injected here when the popup is clicked -->
+                    </div>
+                </div>
+
+                <div class="popup-right">
+                    <div class="popup-text">
+                        <h2>Detailed Explanation</h2>
+                        <p>
+                            This is a detailed explanation that appears on the right side
+                            of the popup. You can add any text or content here to explain
+                            the content in the video.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-bottom">
+            <p> @2024 Benjamin Banh</p>
+            <p> Email me at benjbanh@gmail.com</p>
+        </div>
+    </footer>
+
+
+<script src="{% static 'HOME/script.js' %}"></script>
 {% endblock %}

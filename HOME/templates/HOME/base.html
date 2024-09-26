@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet"> -->
 
+    <link rel="icon" type="image/x-icon" href="{% static 'HOME/images/red-waves.png' %}">
     <link rel="stylesheet" href="{% static 'HOME/styles.css' %}">
     {% block style %}    {% endblock %}
     {% block script %}    {% endblock %}
@@ -19,14 +20,15 @@
 
 <body>
     <div class="navbar" id="navbar">
-        {% block home %} <a href="{% url 'Home:index' %}">Home</a>{% endblock %}
-        {% block projects %} <a href="{% url 'Home:projects' %}">Projects</a>{% endblock %}
+        <a href="#header">Header</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <!-- {% block home %} <a href="{% url 'Home:index' %}">Home</a>{% endblock %}
         {% block experience %} <a href="{% url 'Home:experience' %}">Experience</a>{% endblock %}
-        <!-- {% block balls %}<a href="{% url 'BouncingBalls:index' %}">Balls</a>{% endblock %} -->
-        <!-- {% block spiral %}<a href="{% url 'PrimeSpiral:index' %}">Spiral</a>{% endblock %} -->
-        <!-- {% block skilltree %}<a href="{% url 'SkillTree:index' %}">SkillTree</a>{% endblock %} -->
-        {% block test %}<a href="{% url 'Home:test' %}">Test</a>{% endblock %}
-
+        {% block balls %}<a href="{% url 'BouncingBalls:index' %}">Balls</a>{% endblock %}
+        {% block spiral %}<a href="{% url 'PrimeSpiral:index' %}">Spiral</a>{% endblock %}
+        {% block skilltree %}<a href="{% url 'SkillTree:index' %}">SkillTree</a>{% endblock %}
+        {% block test %}<a href="{% url 'Home:test' %}">Test</a>{% endblock %} -->
     </div>
 
     {% block body %} 

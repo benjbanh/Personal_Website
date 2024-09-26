@@ -4,15 +4,14 @@ Not Implemented Yet
     https://www.w3schools.com/howto/howto_js_sidenav.asp
 
 In Progress:
--   Clean up Nav bar and favicon/website title
--   Add functionality to Email and Resume Tab in homepage 
--   Add links to full apps in 'Project' section
+-   Finish Resume Button
+-   Make icon bar functional
+-   Finish live-box thumbnails
+-   Finish live-box popups
 
 -   Add backtracking algorithm to customize scoring algorithm to be 
         more accurately what user wants
 
--   Started Perlin Noise Terrain Generation
-        threejs is hard
 
 
 Errors:

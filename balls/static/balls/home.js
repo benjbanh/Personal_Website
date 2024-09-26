@@ -5,10 +5,11 @@ const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 
 const width = (canvas.width = window.innerWidth);
-const height = (canvas.height = window.innerHeight);
+const height = (canvas.height = window.innerHeight * 3);
+console.log(document.body.scrollHeight);
 
 const balls = [];
-const initVelocity = 3;
+const initVelocity = 5;
 var id = 0;
 
 // const boundaryRadius = width * 0.15;  // Radius of the circular boundary
