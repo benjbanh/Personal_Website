@@ -1,0 +1,272 @@
+.container-heading h1 {
+    margin: 1em 1em;
+}
+
+.top {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    margin-left: calc(((100% - 100vw) / 2) - 8px);
+    padding: 0;
+    margin: 0;
+    /* background-color: yellow; */
+}
+.top img {
+    position: relative;
+    width: inherit;
+    height: inherit;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    /* background-color: red; */
+}
+
+.caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3em;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.intro {
+    display: flex;
+    position: relative;
+    width: 100%;
+    min-height: 80vh;
+    background-color: rgba(197, 216, 235, 0.5);
+    z-index: 2;
+
+    /*margin: vertical horizontal*/ 
+    padding: 7em 2em;
+    margin-bottom: 2em;
+
+    pointer-events: none;
+}
+
+.left-section {
+    width: 30vw;
+    
+    font-size: 2em;
+    color: black;
+    padding-bottom: 0.5em;
+}
+
+.right-section {
+    width: 65vw;
+    padding-left: 5vw;
+    font-size: 1.5em;
+    color: black;
+    line-height: 1.5;
+}
+
+.right-section h3{
+    white-space: nowrap; 
+    /* background-color: #f6ff00; */
+    width: 10vw;
+    padding-right: 6em;
+}
+
+.right-section p{
+    padding-bottom: 1em;
+    padding-left: 1em;
+}
+
+.right-block {
+    display:flex;
+    pointer-events: auto;
+}
+
+.skills-list {
+    padding: 0 20px;
+}
+.skill-item {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    padding-left: 20px;
+}
+.skill-item:last-child {
+    border-bottom: none;
+}
+.skill-item i {
+    font-size: 24px;
+    color: #000000;
+    margin-right: 15px;
+}
+.skill-item img {
+    width: 24px;
+    height: 24px;
+    color: #000000;
+    margin-right: 15px;
+}
+.skill-name {
+    font-size: 18px;
+    color: #333;
+}
+
+
+.experience{
+    z-index: 2;
+    position: relative;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(200px, 1fr)); /* Ensure 4 boxes per row */
+    gap: 20px; /* Space between boxes */
+    margin: 1em 1em;
+    pointer-events: none;
+    
+}
+
+.box, .live-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+
+    pointer-events: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box img,
+.live-box img,
+.box iframe {
+    width: 100%;
+    height: auto;
+    max-height: 250px; /* Change here*/
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+.box h2,
+.live-box h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+.box p,
+.live-box p {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    justify-content: center;
+}
+.box a,
+.live-box a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.box a:hover,
+.live-box a:hover {
+    color: #0000ff;
+}
+.live-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+/* Popup background overlay */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: auto;
+
+    background-color: rgba(0, 0, 0, 0.7);
+}
+/* Popup content with left and right sections */
+.popup-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 80%; /* Increased size */
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+/* Close button inside the popup */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    pointer-events: auto;
+    color: #333;
+}
+.close:hover {
+    color: red;
+}
+/* Left side (iframe only) */
+.popup-left {
+    width: 50%;
+}
+
+.popup-iframe {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+/* Right side (text only) */
+.popup-right {
+    width: 45%; 
+    padding-left: 20px;
+}
+
+.popup-text h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+}
+.popup-text p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6; 
+}
+
+.popup-text a {
+    color: #3498db;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.popup-text a:hover {
+    color: #2980b9;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: repeat(2, minmax(200px, 1fr)); /* 2 boxes per row for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; /* Make each box take full width on small screens */
+    }
+}
