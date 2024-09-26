@@ -22,6 +22,7 @@ urlpatterns = [
     path('', include('HOME.urls')),
     path('balls/', include('balls.urls')),
     path('spiral/', include('PrimeSpiral.urls')),
+    path('skilltree/', include('SkillTree.urls')),
     path('terraingen/', include('TerrainGen.urls')),
 
 ]

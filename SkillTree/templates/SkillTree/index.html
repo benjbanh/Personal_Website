@@ -1,0 +1,81 @@
+{% extends "HOME\base.html" %}
+{% load static %}
+
+{% block title %} Form and Iframe Example {% endblock %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'SkillTree/styles.css' %}">
+{% endblock %}
+
+{% block script %}
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+{%endblock%}
+
+{% block body %}
+    <div class="main-content">
+        <div class="intro">
+            <div>
+                <h1>Sword and Glory Skill Optimization</h1>
+                <p> In order to best find the best skill optimization,
+                    specifying your specific playstyle is necessary. 
+                </p>
+            </div>
+            <img src="{% static 'SkillTree/icon.png' %}" alt="Intro Image">
+        </div>
+        <div class="form-section">
+            <h2>Fill out this form</h2>
+            <form method="post">
+                {% csrf_token %}
+                <label>Level:</label><br>
+                <input type="range" id="level" name="level" min="1" max="10" value="1" step="1">
+                <span id="level_value"></span>
+
+
+                {{ form.ordered_divs }}
+                <div id="sortable-container">
+                    {% for div in divs %}
+                        <div data-id="{{ div.id }}" class="sortable-item">{{ div.name }}</div>
+                    {% endfor %}
+                </div>
+                <!-- <button type="submit">Submit Order</button> -->
+                <script src="{% static 'SkillTree/script.js' %}"></script>
+
+                                
+                <p>Modifiers</p>
+                <label>to</label><br>
+                <input type="range" id="to_value" name="to" min="1" max="10" value="1" step="1"><br><br>
+                <span id="to_value"></span>
+
+                <label>vs</label><br>
+                <input type="range" id="vs_value" name="vs" min="1" max="10" value="1" step="1"><br><br>
+                <span id="level_value"></span>
+
+                <label>when</label><br>
+                <input type="range" id="when_value" name="when" min="1" max="10" value="1" step="1"><br><br>
+                <span id="level_value"></span>
+
+                <label>for</label><br>
+                <input type="range" id="for_value" name="for" min="1" max="10" value="1" step="1"><br><br>
+                <span id="level_value"></span>
+
+                <label>while</label><br>
+                <input type="range" id="while_value" name="while" min="1" max="10" value="1" step="1"><br><br>
+                <span id="level_value"></span>
+
+                <label>random</label><br>
+                <input type="range" id="random_value" name="random" min="1" max="10" value="1" step="1"><br><br>
+                <span id="level_value"></span>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="output-section">
+            <h2>Form Data Output</h2>
+            <textarea id="formOutput" readonly>{{ form_data|default_if_none:"None" }} </textarea>
+            {% if ordered_divs %}
+                <p>Order of divs: {{ ordered_divs }}</p>
+            {% endif %}
+        </div>
+
+    </div>
+    <iframe src="https://www.example.com"></iframe>
+{%endblock%}
