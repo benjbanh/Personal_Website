@@ -1,0 +1,33 @@
+Not Implemented Yet
+- Add Raycasting project
+- Add more UI elements to finished projects using dropdowns or side navigation
+    https://www.w3schools.com/howto/howto_js_sidenav.asp
+
+In Progress:
+-   Finish Resume Button
+-   Make icon bar functional
+-   Finish live-box thumbnails
+-   Finish live-box popups
+
+-   Add backtracking algorithm to customize scoring algorithm to be 
+        more accurately what user wants
+
+
+
+Errors:
+
+Finished:
+    Adding previews for respective apps on homepage
+-   Use bouncing balls to highlight words on home page
+-   Add more css for homepage
+-   Finish adding image to homepage
+-   Finished Projects Tab
+-   Add hackathon projects to project page
+    Skill Tree Figma finished but yet to be implemented, need to rewatch CS50 for django forms
+    - https://www.figma.com/design/0vdQhbk3bF5k0zGcXK3OC5/Sword-and-Glory-App?node-id=0-1&t=7xzqgLODRZvyXlkM-0 
+    
+
+
+Final Steps:
+- Find out how to publish using vercel 
+- Find a good domain name
