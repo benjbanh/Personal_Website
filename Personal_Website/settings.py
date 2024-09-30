@@ -26,7 +26,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'your-development-secret-key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.vercel.app']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '*.vercel.app']
 
 
 # Application definition
@@ -53,7 +53,6 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.security.SecurityMiddleware',
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
@@ -125,18 +124,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-# STATIC_URL = 'static/'
-# STATIC_ROOT = BASE_DIR / 'staticfiles'
-# STATICFILES_DIRS = [BASE_DIR / 'staticfiles']
-
-
-
-# Static files URL path
 STATIC_URL = '/static/'
-
-# The folder where static files are collected to (for production)
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # This is where collectstatic will put files
+STATICFILES_DIRS = [
+    # Include static directories for each app if needed
+    BASE_DIR / 'balls' / 'static',
+    BASE_DIR / 'HOME' / 'static',
+    BASE_DIR / 'PrimeSpiral' / 'static',
+    BASE_DIR / 'SkillTree' / 'static',
+    BASE_DIR / 'TerrainGen' / 'static',
+]
 
 
 # Default primary key field type
