@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-!bbk&0r2wb8#1$wf+iob2t&8ae78l#uh8spi6$+du@20a6gdip'
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'your-development-secret-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -77,6 +77,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Personal_Website.wsgi.application'
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
@@ -123,15 +125,19 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-
-
 # STATIC_URL = 'static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static'),
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+# STATIC_ROOT = BASE_DIR / 'staticfiles'
+# STATICFILES_DIRS = [BASE_DIR / 'static']
 
+
+
+STATIC_URL = '/static/'
+
+# The folder where static files are collected from during 'collectstatic'
+STATICFILES_DIRS = [BASE_DIR / 'staticfiles']
+
+# The folder where static files are collected to during 'collectstatic'
+STATIC_ROOT = BASE_DIR / 'staticfiles_build' / 'static'
 
 
 # Default primary key field type

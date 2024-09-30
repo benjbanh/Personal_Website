@@ -1,0 +1,31 @@
+body {
+    background-color: rgb(0, 0, 0);
+    margin: 0;
+    padding: 0;
+}
+canvas {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+.canvas-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Ensure canvas fits within container */
+}
+.spiral_info {
+    position: absolute;
+    top: 0; 
+    right: 0; 
+    padding: 5px;
+    font-size: 20px; 
+    /* font-weight: bold; */
+    color: black;
+    width: 15vw;
+    /* background-color: green; */
+    text-align: right;
+    z-index: 999;
+    
+}

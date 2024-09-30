@@ -1,0 +1,168 @@
+#0 base (0)_1-None
+    #1 cat_Occupation (0)_2-None
+        #6 Craftsman (76)_3-None
+            #35 Creator of Quality (79)_4-None
+                #91 Smith (80)_5-None
+                    #117 Weaponsmith (76)_6-None
+                        #150 Armorer (80)_7-None
+                            #164 Legendary Smith (76)_8-None
+        #7 Farmer (82)_3-None
+            #36 Bountiful Harvest (86)_4-None
+                #92 Strong Arms (72)_5-None
+                    #118 Legendary Farmer (78)_6-None
+        #8 Fisherman (90)_3-None
+            #37 Hearty Fish Soup (82)_4-None
+                #93 Healthy Diet Year Round (83)_5-None
+                    #119 Legendary Fisherman (80)_6-None
+        #9 Hunter (79)_3-None
+            #38 Cornering the Quarry (75)_4-None
+                #94 Elk Skiier (76)_5-None
+                    #120 Bear-Soul (60)_6-None
+                        #151 Eagle Eyes (59)_7-None
+                            #165 Legendary Hunter (79)_8-None
+        #10 Thief (91)_3-None
+            #39 Knife-Fighter (75)_4-None
+                #95 Dirty Tricks (86)_5-None
+                    #121 Wolf-Mind (87)_6-None
+                        #152 Legendary Thief (91)_7-None
+        #11 Trader (85)_3-None
+            #40 Well Dressed (97)_4-None
+                #96 Good with Money (81)_5-None
+                    #122 Far-Travelled (97)_6-None
+                        #153 Legendary Trader (74)_7-None
+        #12 Warrior (73)_3-None
+            #41 Superior Skills (75)_4-None
+                #97 Honor Code (56)_5-None
+                    #123 Knows All the Tricks (77)_6-None
+                        #154 Fruits of Practice (65)_7-None
+                            #166 Respect Among Peers (65)_8-None
+                                #167 Legendary Warrior (71)_9-None
+    #2 cat_CombatSkill (0)_2-None
+        #13 Fighting Style: Aggressive (75)_3-None
+            #42 Aggressive Charging (89)_4-None
+            #43 Aggressive Confidence (73)_4-None
+            #44 Aggressive Thrust Defense (79)_4-None
+            #45 Aggressive Domination (65)_4-None
+            #46 Aggressive Shield Bashing (68)_4-None
+            #47 Aggressive Shieldwork (59)_4-None
+            #48 Aggressive Slash Dominance (65)_4-None
+            #49 Aggressive Speed Bash (84)_4-None
+            #50 Aggressive Fast Slashing (90)_4-None
+            #51 Aggressive Power Slashing (75)_4-None
+        #14 Fighting Style: Balanced (71)_3-None
+            #52 Speed Slashing (90)_4-None
+            #53 Bash Defense (79)_4-None
+            #54 Charge Defense (79)_4-None
+            #55 Shieldwork (64)_4-None
+            #56 Technique (72)_4-None
+            #57 Power Slashing (72)_4-None
+            #58 Proper Pacing (79)_4-None
+        #15 Fighting Style: Defensive (81)_3-None
+            #59 Defensive Power Thrust (73)_4-None
+            #60 Defensive Resilience (82)_4-None
+            #61 Defensive Bash Defense (77)_4-None
+            #62 Defensive Charge Defense (77)_4-None
+            #63 Defensive Slash Defense (77)_4-None
+            #64 Defensive Thrust Defense (77)_4-None
+            #65 Defensive Precision Thrust (71)_4-None
+            #66 Defensive Quick Thrust (90)_4-None
+    #3 cat_Religion (0)_2-cat_Religion
+        #16 Christian (1)_3-cat_Religion
+            #67 Lord Is My Shield (80)_4-None
+                #98 Pilgrim (82)_5-None
+                    #124 Banish the Shadows (65)_6-None
+                    #125 Sign from God (68)_6-None
+            #68 Lord Is My Sword (73)_4-None
+                #99 Warrior of Jesus (71)_5-None
+                    #126 Divine Light (65)_6-None
+                    #127 Chosen One (65)_6-None
+            #69 Student of Dogma (79)_4-None
+        #17 Pagan (1)_3-cat_Religion
+            #70 Proud in the Old Ways (73)_4-None
+                #100 Echo in the Wind (97)_5-None
+                #101 Shaman (64)_5-None
+                    #128 Evil Eye (65)_6-None
+                    #129 Possessed by Lempo (86)_6-None
+                #102 Walks with the Dead (73)_5-None
+        #18 Worldly (1)_3-cat_Religion
+            #71 Common Sense (71)_4-None
+    #4 cat_Clan (0)_2-cat_Clan
+        #19 Bear Clan (1)_3-cat_Clan
+            #72 Noble Bear Blood (75)_4-None
+                #103 Mighty Bear Ancestor (90)_5-None
+                    #130 Bear-Mind (76)_6-None
+            #73 Bear Clan Champion (73)_4-None
+        #20 Clanless (1)_3-cat_Clan
+            #74 Last of a Lost Clan (75)_4-None
+                #104 Mighty Ancestor (68)_5-None
+            #75 Independent (97)_4-None
+        #21 Eagle Clan (1)_3-cat_Clan
+            #76 Noble Eagle Blood (69)_4-None
+                #105 Mighty Eagle Ancestor (79)_5-None
+                    #131 Eagle-Mind (71)_6-None
+            #77 Eagle Clan Champion (68)_4-None
+        #22 Elk Clan (1)_3-cat_Clan
+            #78 Noble Elk Blood (79)_4-None
+                #106 Mighty Elk Ancestor (60)_5-None
+                    #132 Elk-Mind (83)_6-None
+            #79 Elk Clan Champion (80)_4-None
+        #23 Foreigner (1)_3-cat_Clan
+        #24 Freed Slave (86)_3-None
+            #80 Champion of the Trodden (64)_4-None
+    #5 cat_Personality (0)_2-cat_Personality
+        #25 Conservative (78)_3-cat_Personality
+            #81 Stubborn (82)_4-None
+                #107 Defender of Traditions (79)_5-None
+                    #133 Unchanging Heart (75)_6-None
+                        #155 Ancestral Wisdom (65)_7-None
+        #26 Friendly (84)_3-cat_Personality
+            #82 Loved by All (80)_4-None
+                #108 No Ill Feelings (60)_5-None
+                    #134 Gracious Winner (93)_6-None
+                        #156 Absorbed in Group (71)_7-None
+                    #135 Jolly Fellow (67)_6-None
+        #27 Impulsive (75)_3-cat_Personality
+            #83 Impetuous (90)_4-None
+                #109 No Patience (68)_5-None
+                    #136 Better Do than Worry (87)_6-None
+                        #157 Action Before Though (76)_7-None
+                    #137 Flaming Passion (73)_6-None
+        #28 Loner (80)_3-cat_Personality
+            #84 Isolated (86)_4-None
+                #110 Lone Wolf (91)_5-None
+                    #138 Free Spirit (85)_6-None
+                        #158 Power of Self (78)_7-None
+                    #139 His Own Best Friend (82)_6-None
+        #29 Moody (71)_3-cat_Personality
+            #85 Unpredictable (72)_4-None
+                #111 Bouts of Mania (84)_5-None
+                    #140 Ill-Tempered (72)_6-None
+                        #159 Storm-Heart (71)_7-None
+                    #141 Bouts of Invardness (77)_6-None
+        #30 Open-minded (84)_3-cat_Personality
+            #86 Never Underestimates (84)_4-None
+                #112 Fair Fighter (90)_5-None
+                    #142 Eye of the Beholder (59)_6-None
+                    #143 Never Surprised (80)_6-None
+                        #160 Sympathetic Wisdom (71)_7-None
+        #31 Organized (81)_3-cat_Personality
+            #87 Pattern-Finder (67)_4-None
+                #113 Hates Disorder (71)_5-None
+                    #144 Plans Ahead (65)_6-None
+                        #161 Thought Before Action (70)_7-None
+        #32 Selfish (81)_3-cat_Personality
+            #88 No Mercy (69)_4-None
+                #114 Needs of One (68)_5-None
+                    #145 Heart of Stone (68)_6-None
+                    #146 Greedy (81)_6-None
+        #33 Social (81)_3-cat_Personality
+            #89 Center of Attention (96)_4-None
+                #115 Encouraged by Friends (82)_5-None
+                    #147 Boasts and Brags (80)_6-None
+                        #162 Power of Friendship (73)_7-None
+                    #148 Faithful Flock (63)_6-None
+        #34 Stable (79)_3-cat_Personality
+            #90 Consistent to a Fault (75)_4-None
+                #116 Firm as Rock (82)_5-None
+                    #149 Dauntless (59)_6-None
+                        #163 Mountain-Heart (73)_7-None
