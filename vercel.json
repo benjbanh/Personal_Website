@@ -1,21 +1,13 @@
-{
-  "builds": [
-    {
-      "src": "Personal_Website/wsgi.py",
+ {
+  "builds": [{
+      "src": "Personal_Project/wsgi.py",
       "use": "@vercel/python",
-      "config": {
-        "maxLambdaSize": "50mb"
-      }
-    }
-  ],
+      "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
+  }],
   "routes": [
-    {
-      "src": "/static/(.*)",
-      "dest": "/static/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "Personal_Website/wsgi.py"
-    }
+      {
+          "src": "/(.*)",
+          "dest": "Personal_Project/wsgi.py"
+      }
   ]
 }
