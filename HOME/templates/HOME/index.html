@@ -3,7 +3,6 @@
 
 {% block title %} Benjamin Banh {% endblock %}
 
-{% block home %}<a class="active" href="{% url 'Home:index' %}"> Home </a> {% endblock %}
 {% block style %}
     <link rel="stylesheet" href="{% static 'HOME/home.css' %}">
     <link rel="stylesheet" href="{% static 'HOME/experience.css' %}">
@@ -12,6 +11,17 @@
 {% endblock %}
 
 {% block body %}
+    <div class="navbar" id="navbar">
+        <a href="#header">Header</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <!-- {% block home %} <a href="{% url 'Home:index' %}">Home</a>{% endblock %}
+        {% block experience %} <a href="{% url 'Home:experience' %}">Experience</a>{% endblock %}
+        {% block balls %}<a href="{% url 'BouncingBalls:index' %}">Balls</a>{% endblock %}
+        {% block spiral %}<a href="{% url 'PrimeSpiral:index' %}">Spiral</a>{% endblock %}
+        {% block test %}<a href="{% url 'Home:test' %}">Test</a>{% endblock %} -->
+    </div>
+
     <div class="header" id="header">
         <!-- Home Section -->
         <canvas class="home-canvas"></canvas>
@@ -28,8 +38,7 @@
             <a href="#experience">My Experience</a>
         </div>
 
-        <a class="resume-button" href="" target="_blank" rel="noopener noreferrer" >My Resume</a> 
-
+        <a class="resume-button" href="{% static 'HOME/images/Benjamin Banh Resume.pdf' %}" target="_blank">My Resume</a> 
 
         <!-- Image Section -->
         <div class="image-container">
@@ -162,19 +171,20 @@
                 class="live-box"
                 data-title="Skill Tree Optimizer"
                 data-description="Sword and Glory is a small mobile game that I found myself incredibly attracted to
-                    and found suprising depth of storytelling. This game has a typical leveling
+                    with simple mechanics and a suprising depth of storytelling. This game has a typical leveling
                     system where you are given a choice to choose a skill each from 3 different catagories
                     at the start of a run and gain a new skill every level. Despite that, I thought
                     that there must be an optimal way for gaining skills to maximize my progression.
                     So this project came to be. I asked some friends for help with the problem and 
                     it somehow became one of the questions for my school's competitive programming competition.
-                    This project still remains as one of my favorites and helped me know so many great people.
+                    This project spanned the course of a year and still remains as one of my favorites and 
+                    helped me know so many great people.
 
                     The project was then constructed into a form with a dynamic scoring system that 
-                    predicts the best build depending on your playstyle and preferences. "
-                data-url="{% static 'HOME/images/spiral_preview.png' %}"
+                    will predict the best build depending on your playstyle and preferences."
+                data-url="{% static 'HOME/images/skilltree.jpg' %}"
             >
-                <img src="https://via.placeholder.com/150" alt="Video Thumbnail" />
+                <img src="{% static 'HOME/images/S&G.png' %}" alt="Video Thumbnail" />
                 <h2>Skill Tree Optimizer</h2>
                 <p>
                     An algorithm that finds the best value solution given 
@@ -192,9 +202,9 @@
                     expenses over total expenses. The goal of our project was 
                     to determine which charities were best for people to donate 
                     to do the most good with the same amount of money."
-                data-url="https://www.youtube.com/embed/video-id-4"
+                data-url="{% static 'HOME/images/IRS.png' %}"
             >
-                <img src="https://via.placeholder.com/150" alt="Video Thumbnail" />
+                <img src="{% static 'HOME/images/charity.jpg' %}" alt="Video Thumbnail" />
                 <h2>Charity Evaluator</h2>
                 <p>
                     Evaluates the most efficient charity through IRS Forms
@@ -205,56 +215,79 @@
             <div
                 class="live-box"
                 data-title="Social Interaction Simulator Game"
-                data-description="This is the description for Video 4."
-                data-url="https://www.youtube.com/embed/video-id-4"
+                data-description="This was a hackathon project where our team 
+                    built an AI conversation partner with the goal of helping those 
+                    who have been impacted socially by the pandemic or anyone who 
+                    wishes to practice having a conversation without the pressure of 
+                    judgement of the outside world. The companion would ask a variety 
+                    of questions and would then score your response as well as provide 
+                    constructive feedback to the user. This was to provide a visible 
+                    metric for which the user can use to tell if they are improving 
+                    opposed to having the user guess their progress or the AI's intention 
+                    through conversation. To improve the learning curve for the app, we 
+                    decided to also include a helper that would guide you in your 
+                    conversations as well as a fun background and partner to keep users 
+                    engaged and lower the tension in the activity."
+                data-url="{% static 'HOME/images/pixel_dude.png' %}"
             >
-                <img src="https://via.placeholder.com/150" alt="Video Thumbnail" />
-                <h2>Social Interaction Simulator Game</h2>
+                <img src="{% static 'HOME/images/SocialSim.png' %}" alt="Video Thumbnail" />
+                <h2 style="pointer-events: all;">Social Interaction Simulator Game</h2>
                 <p>
-                    Description<br>
+                    AI friend to practice conversations<br>
                     <a href="https://github.com/suncycles/h4hsocialsim" target="_blank">Link to Github</a>
                 </p>
             </div>
             <div
                 class="live-box"
                 data-title="Video 4 Title"
-                data-description="This is the description for Video 4."
-                data-url="https://www.youtube.com/embed/video-id-4"
+                data-description="This was a project done by a family friend who wanted to 
+                make a website dedicated to his love for astronomy and he needed help with 
+                front end web design built upon the Django framework. I started to learn 
+                more about teamwork in a long-term project as well as learning varying frameworks 
+                essential for front-end development. Working on this website was the inspiration 
+                of my very own website(this) and I hope to continue designing such products.
+                Check him out at https://upinthesky.net/"
+                data-url="{% static 'HOME/images/galaxy.png' %}"
             >
-                <img src="https://via.placeholder.com/150" alt="Video Thumbnail" />
+                <img src="{% static 'HOME/images/space.jpg' %}" alt="Video Thumbnail" />
                 <h2>Universe3D</h2>
-                <p>Click to view a video demonstration and detailed explanation</p>
+                <p>Helped in the redesign of the front end of family friend's website</p>
             </div>
             <div
                 class="live-box"
                 data-title="Video 4 Title"
-                data-description="This is the description for Video 4."
-                data-url="https://www.youtube.com/embed/video-id-4"
+                data-description="Currently I am part of the board for the IEEE Student 
+                    Chapter for Santa Clara Region 6 as the Public Relations member of 
+                    the student led board. Currently my responsibilities is to host 
+                    events alongside other board members, communicating with the Santa 
+                    Clara IEEE  and maintain good club relations with other clubs. I 
+                    started this position in the Spring of 2023 and hope to help improve 
+                    the club into being something bigger than it is now."
+                data-url="{% static 'HOME/images/IEEE_board.png' %}"
             >
-                <img src="https://via.placeholder.com/150" alt="Video Thumbnail" />
+                <img src="{% static 'HOME/images/IEEE_logo.svg.png' %}" alt="Video Thumbnail" />
                 <h2>IEEE Board Member</h2>
-                <p>Click to view a video demonstration and detailed explanation</p>
+                <p>Board Member for Santa Clara University's Student Chapter</p>
             </div>
             <div
                 class="live-box"
-                data-title="Video 4 Title"
-                data-description="This is the description for Video 4."
-                data-url="https://www.youtube.com/embed/video-id-4"
+                data-title="Media Services"
+                data-description="Media Services is Santa Clara University audio 
+                    visual support team formed with a majority of student staff. We 
+                    hold the responsibility of setting up, operating, and maintaining 
+                    equipment for varying events and conferences for all groups on campus. 
+                    Due to the variety of tasks we are made to perform and support, I 
+                    have learned several Audio Visual Skills such as troubleshooting 
+                    problems remotely, working with several recording and acoustic devices, 
+                    and inspecting AV equipment to maintain its condition. Throughout this 
+                    job I have worked closely with several event planners, professors, and 
+                    other team members to ensure the best event they can have."
+                data-url="{% static 'HOME/images/placeholder.jpg' %}"
             >
-                <img src="https://via.placeholder.com/150" alt="Video Thumbnail" />
+                <img src="{% static 'HOME/images/MS.jpg' %}" alt="Video Thumbnail" />
                 <h2>Media Services</h2>
-                <p>Click to view a video demonstration and detailed explanation</p>
+                <p>Santa Clara University's Tech and Audio Visual Support</p>
             </div>
-            <!-- <div
-                class="live-box"
-                data-title="Video 4 Title"
-                data-description="This is the description for Video 4."
-                data-url="https://www.youtube.com/embed/video-id-4"
-            >
-                <img src="https://via.placeholder.com/150" alt="Video Thumbnail" />
-                <h2>Watch Video 4</h2>
-                <p>Click to view a video demonstration and detailed explanation</p>
-            </div> -->
         </div>
 
         <!-- Popup with distinct iframe and text sections -->
@@ -291,5 +324,5 @@
     </footer>
 
 
-<script src="{% static 'HOME/script.js' %}"></script>
+    <script src="{% static 'HOME/script.js' %}"></script>
 {% endblock %}

@@ -1,9 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
-    return render(request, "HOME/index.html")
+    resume = "HOME/resume.pdf"
+    return render(request, "HOME/index.html", {'pdf_file': resume})
 
 def experience(request):
     return render(request, "HOME/experience.html")

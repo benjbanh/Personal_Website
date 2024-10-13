@@ -1,4 +1,3 @@
-// Get elements
 const liveBoxes = document.querySelectorAll(".live-box");
 const popup = document.getElementById("popup");
 const closeBtn = document.querySelector(".close");
@@ -6,20 +5,36 @@ const iframeContainer = document.getElementById("iframe-container");
 const popupTitle = document.querySelector(".popup-text h2");
 const popupDescription = document.querySelector(".popup-text p");
 
-// Function to load iframe when popup is opened
-function loadIframe(videoURL) {
-    const iframe = document.createElement("iframe");
-    iframe.src = videoURL + "?autoplay=1"; // Auto-start the video
-    iframe.width = "100%";
-    iframe.height = "315";
-    iframe.frameBorder = "0";
-    iframe.allow =
-        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-    iframe.allowFullscreen = true;
+// Function to load iframe or image when popup is opened
+function loadContent(url) {
+    iframeContainer.innerHTML = ""; // Clear any previous content
 
-    // Append iframe to the container
-    iframeContainer.innerHTML = ""; // Clear any previous iframe
-    iframeContainer.appendChild(iframe);
+    // Check if the URL is for an image (common image extensions)
+    const isImage = /\.(jpg|jpeg|png|gif|webp)$/i.test(url);
+    console.log("test")
+
+    if (isImage) {
+        const img = document.createElement("img");
+        img.src = url;
+        img.style.width = "100%"; // Make the image scale with the container width
+        img.style.height = "auto"; // Keep the aspect ratio
+        img.style.objectFit = "contain"; // Ensure the image fits within the container
+        iframeContainer.appendChild(img);
+        console.log("Image")
+    } else {
+        // Assume it's a video (iframe) if it's not an image
+        const iframe = document.createElement("iframe");
+        iframe.src = url + "?autoplay=1"; // Auto-start the video
+        iframe.width = "100%";
+        iframe.height = "100%"; 
+        iframe.allow =
+            "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+        iframe.allowFullscreen = true;
+        iframe.style.border = "none"; // Remove iframe border
+
+        iframeContainer.appendChild(iframe);
+        console.log("video")
+    }
 }
 
 // Show popup when any live-box is clicked
@@ -29,12 +44,13 @@ liveBoxes.forEach(box => {
         const title = box.getAttribute("data-title");
         const description = box.getAttribute("data-description");
 
-        loadIframe(videoURL); // Load the corresponding iframe
+        loadContent(videoURL); // Load the corresponding iframe or image
         popupTitle.textContent = title; // Set the title
         popupDescription.textContent = description; // Set the description
         popup.style.display = "block"; // Show the popup
     });
 });
+
 
 // Close popup when the close button is clicked
 closeBtn.addEventListener("click", closePopup);
