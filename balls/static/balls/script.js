@@ -1,5 +1,3 @@
-// https://editor.p5js.org/codingtrain/sketches/z8n19RFz9
-
 const para = document.querySelector("p");
 let count = 0;
 
@@ -7,7 +5,7 @@ const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 
 const width = (canvas.width = window.innerWidth);
-const height = (canvas.height = window.innerWidth * 3);
+const height = (canvas.height = window.innerHeight);
 
 const balls = [];
 const initVelocity = 10;
